@@ -14,6 +14,7 @@ function presionEnlace (e) {
 
     e.preventDefault();
     let url = e.target.getAttribute("href");
+    console.log(url);
     cargarHoroscopo(url);
 }
 
@@ -23,13 +24,13 @@ function cargarHoroscopo (url) {
     conexion1 = new XMLHttpRequest();
     conexion1.onreadystatechange = procesarEventos;
     conexion1.open('GET', url, true);
-    conexion1.send;
+    conexion1.send();
 }
 
 function procesarEventos () {
 
     let detalles = document.getElementById("detalles");
-    console.log(conexion1.readyState);
+    //console.log(conexion1.readyState);
     if(conexion1.readyState == 4){
         detalles.innerHTML =  conexion1.responseText;
     }else{
