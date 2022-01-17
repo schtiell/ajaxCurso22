@@ -1,4 +1,4 @@
-
+// El manejador de eventos del DOM escucha cuando el evento load se dispara, se invoca a la función inicializarEventos(), y la propación del evento se fija en false
 addEventListener("load", inicializarEventos, false);
 
 function inicializarEventos (){
