@@ -64,7 +64,7 @@ function procesarEventos () {
     }else{
 
         //Si el estado del metodo readyState es diferente de 4 entonces se muestra el mensaje en el DOM "cargando...."
-        detalles.innerHTML = "cargando...";
+        detalles.innerHTML = "cargando....";
     }
 }
 
