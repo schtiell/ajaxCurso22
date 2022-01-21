@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 
     <link rel="stylesheet" href="./css/03.estilos.css" type="text/css">
-
-
+    
     <title>Mismo ejemplo de los horoscopos sin usar Ajax</title>
 </head>
 <body>

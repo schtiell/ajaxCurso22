@@ -1,0 +1,69 @@
+.container{
+    background: #FAFAFA;
+    color: #212F3D;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 30px;
+
+}
+
+small{
+    display: block;
+}
+
+hr{
+    margin: 40px;
+}
+
+h1{
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+p{
+    margin: 20px;
+    text-align: justify;
+}
+
+span{
+    font-weight: bold;
+}
+
+label{
+    display: flex;
+    justify-content: left;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-weight: bold;
+}
+
+.resultados{
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px solid #000;
+    margin: 20px;
+    padding: 20px;
+    width: 50%;
+}
+
+.image{
+    display: block;
+    margin: 35px auto;
+    width: 250px;
+    height: 250px;
+    background: url(http://www.scratchya.com.ar/problemas/ajaxya2/resu/foto1.jpg);
+    border: 1.5px solid #000;
+    border-radius: 15px;
+}
+
+.btn{
+    width: 200px;
+    margin: 20px;
+}
+
+
+.form-control{
+    width: 30%;
+}
