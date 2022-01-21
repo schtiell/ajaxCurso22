@@ -1,0 +1,66 @@
+.container{
+    background: #FAFAFA;
+    color: #212F3D;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 30px;
+
+}
+
+small{
+    display: block;
+}
+
+hr{
+    margin: 40px;
+}
+
+h1{
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+p{
+    margin: 20px;
+    text-align: justify;
+}
+
+span{
+    font-weight:bold;
+    font-style:oblique;
+
+}
+
+.image{
+    display: block;
+    margin: 35px auto;
+    width: 250px;
+    height: 250px;
+    background: url(http://www.scratchya.com.ar/problemas/ajaxya2/resu/foto1.jpg);
+    border: 1.5px solid #000;
+    border-radius: 15px;
+}
+
+
+/*Estilos para el ejemplo*/
+
+
+.voto{
+    padding: 0;
+}
+
+.voto a{
+    float: left;
+    width: 15px;
+    text-decoration: none;
+    text-align: center;
+    color: #f00;
+    background: #F7F8E8;
+    border-right: 1px solid #FAFAFA;
+    font-size: 13px;
+}
+
+.voto li{
+    display: inline;
+}

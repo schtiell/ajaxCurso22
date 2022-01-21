@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando jQuery -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <!-- Importando el CDN de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    
+    <!-- Importando los estilos css -->
+    <link rel="stylesheet" href="./css/06.estilos.css" type="text/css">
+
+    <title>Pasando datos al servidor por el método GET</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Ejercicio Ajax: <small>Pasando datos al servidor por el método GET</small></h1>
+
+        <p>Para indicar cual es el método de envío de los datos al servidor lo hacemos en el primer parámetro del método open del objeto XMLHttpRequest:</p>
+        
+        <p><span>conexion1.open('GET','pagina1.php?puntaje='+voto+'&nombre='+nom, true);</span></p>
+
+        <p>En este ejemplo vemos como indicamos que el envío de los datos se hace por el método GET. Si lo hacemos de esta forma tenemos que tener mucho cuidado en la codificación del segundo parámetro del método open donde indicamos el nombre de la página a pedir.</p>
+
+        <p>Seguido al nombre de la página debe ir el signo de interrogación, el nombre del parámetro, luego un igual y el valor del parámetro. En caso de haber más de un parámetro debemos separarlos mediante el caracter ampersand. "&"</p>
+
+        <p>Por último el tercer parámetro del método open normalmente se pasa el valor true indicando que el requerimiento de la página es asíncrona (esto permite al visitante continuar interactuando con la página sin que se congele hasta llegar la solicitud)</p>
+
+        <p>Confeccionaremos un problema similar al anterior, es decir que nos permita calificar una foto con un valor de 1 al 10. La diferencia es que la calificación será por medio de una lista de hipervínculos del 1 al 10. Además haremos que la barra de selección de la calificación cambie de color cuando ingresamos con el mouse.</p>
+
+        <p>Veremos que la mayor dificultad se encuentra en la codificación de esta última característica más que en la comunicación asincrónica.</p>
+
+        <hr>
+
+        <h2>Vote por la siguiente foto:</h2>
+
+        <img class="image">
+
+        <ul class="voto" id="votofoto1">
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=1">1</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=2">2</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=3">3</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=4">4</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=5">5</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=6">6</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=7">7</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=8">8</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=9">9</a></li>
+            <li><a href="./php/06.pasandoDatosMetodoGet.php?voto=10">10</a></li>
+        </ul>
+        <div id="resultados">
+            <a href="./php/votos.txt">Ver resultados</a>
+        </div>
+    </div>
+</body>
+</html>
