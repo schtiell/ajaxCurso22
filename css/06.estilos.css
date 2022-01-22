@@ -45,20 +45,24 @@ span{
 
 /*Estilos para el ejemplo*/
 
-
+.enlaces{
+    display: flex;
+    justify-content: center;
+}
 .voto{
     padding: 0;
 }
 
 .voto a{
     float: left;
-    width: 15px;
+    width: 30px;
     text-decoration: none;
     text-align: center;
     color: #f00;
-    background: blue;
-    border-right: 1px solid greenyellow;
-    font-size: 13px;
+    background: #f7f8e8;
+    border: 1px solid #a4f53e;
+    font-size: 20px;
+    margin: 1px;
 }
 
 .voto li{

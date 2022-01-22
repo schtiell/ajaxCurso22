@@ -4,7 +4,7 @@
 
     $file = fopen('../php/votos.txt','a') or die("No se puede abrir el archivo");
 
-    fputs($file, $_REQUEST['voto']."-\n");
+    fputs($file, $_REQUEST['voto']."-".$_REQUEST['aleatorio']."\n");
 
     fclose($file);
 ?>
