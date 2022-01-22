@@ -1,7 +1,8 @@
 console.log("Pasando datos con el metodo get");
 
+addEventListener('load', inicializarEventos, false);
 
-let inicializarEventos = function (){
+function inicializarEventos () {
     
     let ref = document.getElementById('votofoto1');
     let array_li = ref.getElementsByTagName("li");
@@ -15,7 +16,7 @@ let inicializarEventos = function (){
 }
 
 
-let entrar = function (e) {
+function entrar (e) {
     
     let ref = e.target;
     let obj = document.getElementById("votofoto1");
@@ -28,7 +29,7 @@ let entrar = function (e) {
 }
 
 
-let salir = function (e) {
+function salir (e) {
 
     let ref = e.target;
     let obj = document.getElementById ("votofoto1");
@@ -41,15 +42,16 @@ let salir = function (e) {
 }
 
 
-let presionBoton = function (e) {
+function presionBoton(e) {
 
     e.preventDefault();
     let ref = e.target;
     cargarVoto(ref.firstChild.nodeValue); 
 }
 
+var conexion;
 
-let cargarVoto = function (voto) {
+function cargarVoto (voto) {
     
     conexion = new XMLHttpRequest();
     conexion.onreadystatechange = procesarEventos;
@@ -59,7 +61,7 @@ let cargarVoto = function (voto) {
 }
 
 
-let procesarEventos = function () {
+function procesarEventos () {
 
     let resultados = document.getElementById("resultados");
 
@@ -69,7 +71,3 @@ let procesarEventos = function () {
         resultados.innerHTML = 'Procesando...';
     }
 }
-
-var conexion;
-addEventListener('load', inicializarEventos, false);
-

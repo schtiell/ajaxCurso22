@@ -56,8 +56,8 @@ span{
     text-decoration: none;
     text-align: center;
     color: #f00;
-    background: #F7F8E8;
-    border-right: 1px solid #FAFAFA;
+    background: blue;
+    border-right: 1px solid greenyellow;
     font-size: 13px;
 }
 
