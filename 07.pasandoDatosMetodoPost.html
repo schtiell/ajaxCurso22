@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando la libreria de jQuery -->
+    <script src="./js/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+    <!-- Importando el CDN de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- Importando estilos css -->
+    <link rel="stylesheet" href="./css/07.estilos.css" type="text/css">
+
+    <title>Pasando datos al servidor utilizando el metodo POST</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio Ajax: <small>Pasando datos al servidor por el método POST.</small></h1>
+
+        <p>Podemos enviar los datos por el método GET, como hemos visto hasta ahora, pero también podemos enviar los datos por el método POST.</p>
+
+        <p>El método POST se utiliza cuando hay que enviar mucha información al servidor.</p>
+
+        <p>Hay varios puntos a tener en cuenta para cuando codificamos los datos para el envío por el método POST:</p>
+
+        <ol>
+            <li>Cuando llamamos al método open del objeto XMLHttpRequest como primer parámetro indicamos el string 'POST':</li>
+
+            <p><span>conexion1.open('POST','pagina1.php', true);</span></p>
+
+            <li>Llamamos al método setRequestHeader indicando que los datos a enviarse están codificados como un formulario:</li>
+
+            <p><span>conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");</span></p>
+
+            <li>Llamamos al método send del objeto XMLHttpRequest pasando los datos:</li>
+
+            <p><span>conexion1.send("nombre=juan&clave=z80");</span></p>
+
+        </ol>
+
+        <p>Podemos concatenar datos recuperados de un formulario y enviarlos a través del método send.</p>
+
+        <p>Confeccionaremos un problema completo para probar la funcionalidad del envío de datos por el método POST.</p>
+
+        <p>Haremos una serie de páginas que nos permitan enviar los datos cargados en un formulario al servidor en forma asincrónica y por lo tanto no tendremos que refrescar la página luego de enviado los datos. El formulario solicitará que ingrese el nombre y comentarios del sitio.</p>
+    </div>
+
+    <hr>
+
+    <div class="ejemplo">
+
+        <h2>Ejemplo de formulario</h2>
+
+        <form action="./php/07.pasandoDatosMetodoPost.php" method="post" id="formulario">
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" id="nombre" size="35">
+
+            <label for="comentarios">Comentarios: </label>
+            <textarea name="comentarios" id="comentarios" cols="50" rows="10"></textarea>
+
+            <input type="submit" value="Enviar" id="enviar" class="btn btn-primary">
+        </form>
+
+        <div id="resultados"></div>
+        <a href="./php/comentarios.txt" id="link">Ver resultados</a>
+    </div>
+
+    <!-- Importando el script js -->
+    <script src="./js/07.pasandoDatosMetodoPost.js" type="text/javascript"></script>
+</body>
+</html>

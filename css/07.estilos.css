@@ -1,0 +1,80 @@
+
+/*Estilos definidos para la plantilla*/
+
+.container{
+    background: #FAFAFA;
+    color: #212F3D;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 30px;
+
+}
+
+small{
+    display: block;
+}
+
+hr{
+    margin: 40px;
+}
+
+h1{
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+p{
+    margin: 20px;
+    text-align: justify;
+}
+
+li{
+    margin: 20px;
+    text-align: justify;
+}
+
+span{
+    font-weight:bold;
+    font-style:oblique;
+    margin: auto;
+}
+
+
+.ejemplo{
+    display: block;
+    text-align: center;
+    border: 2px solid #CDEDFE;
+    background: #D2EDFB;
+    margin: 20px 65px;
+    box-shadow: 16px 7px 53px -5px rgba(0,0,0,0.54);
+    -webkit-box-shadow: 16px 7px 53px -5px rgba(0,0,0,0.54);
+    -moz-box-shadow: 16px 7px 53px -5px rgba(0,0,0,0.54);
+}
+
+h2{
+    margin: 20px;
+}
+
+
+label {
+    display: inline;
+    margin: 10px;
+}
+
+input,
+textarea{
+    display: block;
+    margin: 10px auto;
+    border: 1px solid #14AAF7;
+    border-radius: 5px;
+}
+
+#enviar{
+    width: 20%;
+}
+
+#link {
+    margin: 30px;
+}
+
