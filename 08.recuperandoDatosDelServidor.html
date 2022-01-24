@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando la libreria jQuery -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <!-- Importando el CDN de bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- Importando los estilos css -->
+    <link rel="stylesheet" href="./css/08.estilos.css" type="text/css">
+
+    <title>Recuperando datos mediante la propiedad responseText del objeto XMLHttpRequest</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Recuperando datos mediante la propiedad <small>responseText del objeto XMLHttpRequest</small></h1>
+
+        <p>Ahora nos concentraremos en la propiedad responseText del objeto XMLHttpRequest. Esta propiedad almacena el valor devuelto por el servidor.</p>
+
+        <p>Normalmente accederemos a la propiedad responseText cuando el objeto XMLHttpRequest nos informa que toda la información fue remitida por el servidor, esto ocurre cuando la propiedad readyState del objeto XMLHttpRequest almacena el valor 4.</p>
+
+        <p>Confeccionaremos un ejemplo para identifiar donde utilizar la propiedad responseText. El problema consiste en mostrar una lista de hipervínculos que representan los comentarios de distintas fecha. El objetivo es rescatar todos los comentarios para la fecha seleccionada por el visitante y su posterior visualización sin tener que recargar nuevamente la página.</p>
+
+        <hr>
+
+        <h2>Selecciona la fecha</h2>
+
+        <div id="fecha">
+            <a href="./php/08.recuperandoDatosDelServidor.php?fecha=21/01/16">Ver comentarios del 21/Enero/16</a>
+            <a href="./php/08.recuperandoDatosDelServidor.php?fecha=22/01/16">Ver comentarios del 22/Enero/16</a>
+            <a href="./php/08.recuperandoDatosDelServidor.php?fecha=23/01/16">Ver comentarios del 23/Enero/16</a>
+        </div>
+        <div class="contenedor">
+            <div class="recuadro" id="comentarios">Comentarios:</div>
+        </div>
+    </div>
+
+    <script src="./js/08.recuperandoDatosDelServidor.js" type="text/javascript"></script>
+</body>
+</html>

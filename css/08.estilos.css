@@ -1,0 +1,73 @@
+/*Estilos definidos para la plantilla*/
+
+.container{
+    background: #FAFAFA;
+    color: #212F3D;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 30px;
+}
+
+small{
+    display: block;
+}
+
+hr{
+    margin: 40px;
+}
+
+h1{
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2{
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+p{
+    margin: 20px;
+    text-align: justify;
+}
+
+li{
+    margin: 20px;
+    text-align: justify;
+}
+
+span{
+    font-weight:bold;
+    font-style:oblique;
+    margin: auto;
+}
+
+/* Estilos para el ejemplo */
+
+a{
+    display: block;
+    text-align: left;
+    margin: 10px;
+}
+
+.recuadro{
+    background: #ffffcc;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-width: 0;
+    padding: 15px;
+    border: 1px solid #ffaa00;
+    margin: 40px;
+    width: 70%;
+}
+
+.recuadro p{
+    text-align: center;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
