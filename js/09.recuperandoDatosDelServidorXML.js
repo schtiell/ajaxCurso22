@@ -9,7 +9,20 @@ let inicializarEventos = function (){
 
 let presionBoton = function (e){
     let obj = document.querySelector("#pais").value;
-    recuperarDatos(obj);
+
+    console.log(obj);
+
+    if (obj == '0'){
+
+        let resultados = document.querySelector("#resultados");
+        resultados.innerHTML = "Selecciona otra opción";
+        resultados.style.display = "block";
+
+    }else{
+
+        recuperarDatos(obj);
+    }
+    
 }
 
 
@@ -32,8 +45,6 @@ let procesarEventos = function (){
 
         let xml = conexion.responseXML;
 
-        if(xml != '0'){
-
             let capital = xml.getElementsByTagName("capital");
             let superficie = xml.getElementsByTagName("superficie");
             let idioma = xml.getElementsByTagName("idioma");
@@ -46,13 +57,6 @@ let procesarEventos = function (){
         
             
             resultados.style.display = "block";
-
-        }else {
-
-            console.log("Opción inválida");
-            resultados.innerHTML = 'Opcion inválida';
-            resultados.style.display = "block";
-        }   
 
     }else{
 
