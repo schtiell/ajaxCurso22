@@ -1,5 +1,35 @@
 //console.log("Recuperando los datos del servidor con XML");
 
+
+/** 
+ *  EJERCICIO PROPUESTO PARA MODIFICAR EL EJEMPLO
+ * 
+    Modificar el problema resuelto de tal manera que no requiera un botón para actualizar los datos del pais. Se deben recuperar los datos inmediatamente seleccionado un item del control select.
+
+
+let iniciarEventosEjercicio = function(){
+
+    let obj = document.querySelector("#pais");
+    obj.addEventListener("change", cambiarOptionSelect, false);
+}
+
+let cambiarOptionSelect =  function(e){
+
+    let obj = document.querySelector("#pais").value;
+
+    if (obj == '0'){
+
+        let resultados = document.querySelector("#resultados");
+        resultados.innerHTML = "Selecciona otra opción";
+
+    }else {
+        recuperarDatos(obj);
+    }
+    
+}
+
+**/
+
 let inicializarEventos = function (){
 
     let obj = document.querySelector("#boton1");
@@ -8,6 +38,9 @@ let inicializarEventos = function (){
 
 
 let presionBoton = function (e){
+
+    console.log(e);
+
     let obj = document.querySelector("#pais").value;
 
     console.log(obj);
@@ -66,3 +99,4 @@ let procesarEventos = function (){
 
 var conexion;
 addEventListener("load",inicializarEventos,false);
+//addEventListener("load",iniciarEventosEjercicio,false);
