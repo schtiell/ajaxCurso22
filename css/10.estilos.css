@@ -38,26 +38,33 @@ li{
     text-align: justify;
 }
 
-span{
+span,
+pre{
     font-weight:bold;
     font-style:oblique;
-    margin: auto;
+    text-align: left;
 }
 
-/* Estilos para el ejemplo */
+li{
+    list-style: disc;
+}
 
-btn-primary,
-#pais{
+.funciones{
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+/*Estilos para el ejercicio*/
+
+.formulario{
+    background: lightgreen;
+    padding: 10px;
+}
+
+input,
+label{
     display: block;
-    margin: 30px auto;
-    width: 200px;
+    margin: 20px auto;
 }
 
-#resultados{
-    display: none;
-    width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 3px;
-}
+
