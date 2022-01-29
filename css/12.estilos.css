@@ -1,0 +1,75 @@
+/*Estilos definidos para la plantilla*/
+
+.container{
+    background: #FAFAFA;
+    color: #212F3D;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 30px;
+}
+
+small{
+    display: block;
+}
+
+hr{
+    margin: 40px;
+}
+
+h1{
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2{
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+p{
+    margin: 20px;
+    text-align: justify;
+}
+
+li{
+    margin: 20px;
+    text-align: justify;
+    list-style: disc;
+}
+
+span{
+    font-weight:bold;
+    font-style:oblique;
+    text-align: left;
+}
+
+/*Estilos para el ejercicio*/
+
+.formulario{
+    display: block;
+    background: lightskyblue;
+    padding: 10px;
+}
+
+input,
+label{
+    display: block;
+    margin: 15px auto;
+}
+
+.form-control{
+    width: 100px;
+}
+
+#resultados{
+    display: none;
+    border: 2px solid #93F862;
+    width: 350px;
+    margin: 20px auto;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
