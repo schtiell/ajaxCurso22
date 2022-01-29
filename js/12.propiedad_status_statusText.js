@@ -40,7 +40,7 @@ let procesarEventos = function () {
 
             //Si el resultado es difrente de status 200 entonces se manda un aler con el valor de status
             resultados.innerHTML = ' ';
-            alert(`Error ${conexion.status}, Not found`);
+            alert(`Error ${conexion.statusText}, Not found`);
         }
     }else{
 
