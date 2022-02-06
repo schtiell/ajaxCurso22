@@ -1,6 +1,8 @@
 /*Estilos definidos para la plantilla*/
 
 .container{
+    display: block;
+    text-align: center;
     background: #FAFAFA;
     color: #212F3D;
     text-align: center;
@@ -44,4 +46,16 @@ span{
     font-weight:bold;
     font-style:oblique;
     text-align: left;
+}
+
+#video{
+    display: block;
+    margin: 20px auto;
+}
+
+.ant,
+.sig{
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
 }

@@ -1,7 +1,10 @@
 
 <?php
-
     header('Content-Type: text/html; charset=utf-8');
+
+    //Importando la conexion a la base de datos
+    require_once "./config.php";
+    require_once "./dbconnect.php";
 
     if (isset($_REQUEST['pos'])) {
 
@@ -10,38 +13,38 @@
         $inicio = 0;
     }
 
-    $conexion = mysqli_connect("localhost","root",123456,"bdajax") or die ("Problemas con la conexión a la bd");
-
-    $registros = mysqli_query($conexion, "SELECT * FROM comentarios LIMIT $inicio,3") or die ("Problemas al seleccionar los datos: ".mysqli_error($conexion));
-
     $impresos = 0;
 
-    while($reg = mysqli_fetch_array($registros)){
+    $registros = $conn->query("SELECT * FROM comentarios LIMIT $inicio,3");
 
-        $impresos+=1;
-        echo "Nombre: ".$reg['nombre']."<br>";
-        echo "Fecha: ".$reg['fecha']."<br>";
-        echo "Comentario: ".$reg['comentarios']."<br>";
-        echo "<br>";
+    while($comentario = $registros->fetch(PDO::FETCH_ASSOC)){
+
+        $impresos +=1;
+        echo    "Nombre: "      . $comentario['nombre']     . "<br>"    .
+                "Fecha: "       . $comentario['fecha']      . "<br>"    .
+                "Comentario: "  . $comentario['comentarios']."<br>"     .
+                "===================================================="  .
+                "<br>";
     }
 
-    mysqli_close($conexion);
+    //Cierre de la conexión a la bd
+    $conn = null;
 
     if($inicio == 0){
 
-        echo "Anteriores";
+        echo "<p class=\"ant\"> Anteriores </p>";
     }else{
 
         $anterior = $inicio - 3;
-        echo "<a href=\"./php/15.paginacionAjax.php?pos=$anterior\" id=\"sig\">Siguientes</a>";
+        echo "<a href=\"./php/15.paginacionAjax.php?pos=$anterior\" class=\"ant\">Anteriores</a>";
     }
 
     if ($impresos == 3){
 
         $proximo = $inicio + 3;
-        echo "<a href=\"./php/15.paginacionAjax.php?pos=$proximo\" id=\"sig\">Siguientes</a>";
+        echo "<a href=\"./php/15.paginacionAjax.php?pos=$proximo\" class=\"sig\">Siguientes</a>";
     }else{
 
-        echo "Siguientes";
+        echo "<p class=\"sig\">Siguientes</p>";
     }
 ?>
