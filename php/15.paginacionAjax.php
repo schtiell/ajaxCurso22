@@ -13,22 +13,25 @@
         $inicio = 0;
     }
 
-    $impresos = 0;
 
-    $registros = $conn->query("SELECT * FROM comentarios LIMIT $inicio,3");
 
-    while($comentario = $registros->fetch(PDO::FETCH_ASSOC)){
+    
+    // $impresos = 0;
 
-        $impresos +=1;
-        echo    "Nombre: "      . $comentario['nombre']     . "<br>"    .
-                "Fecha: "       . $comentario['fecha']      . "<br>"    .
-                "Comentario: "  . $comentario['comentarios']."<br>"     .
-                "===================================================="  .
-                "<br>";
-    }
+    // $registros = $conn->query("SELECT * FROM comentarios LIMIT $inicio,3");
+
+    // while($comentario = $registros->fetch(PDO::FETCH_ASSOC)){
+
+    //     $impresos +=1;
+    //     echo    "Nombre: "      . $comentario['nombre']     . "<br>"    .
+    //             "Fecha: "       . $comentario['fecha']      . "<br>"    .
+    //             "Comentario: "  . $comentario['comentarios']."<br>"     .
+    //             "===================================================="  .
+    //             "<br>";
+    // }
 
     //Cierre de la conexión a la bd
-    $conn = null;
+    //$conn = null;
 
     if($inicio == 0){
 

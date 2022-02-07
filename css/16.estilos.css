@@ -1,0 +1,54 @@
+/*Estilos definidos para la plantilla*/
+
+.container{
+    display: block;
+    text-align: center;
+    background: #FAFAFA;
+    color: #212F3D;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 30px;
+}
+
+small{
+    display: block;
+    color: #8C9193;
+}
+
+hr{
+    margin: 40px;
+}
+
+h1{
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2{
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+p{
+    margin: 20px;
+    text-align: justify;
+}
+
+li{
+    margin: 20px;
+    text-align: justify;
+    list-style: disc;
+}
+
+span{
+    font-weight:bold;
+    font-style:oblique;
+    text-align: left;
+}
+
+.form-control{
+    width: 50%;
+    margin: 20px auto;
+}
