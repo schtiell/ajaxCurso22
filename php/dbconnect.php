@@ -25,7 +25,7 @@
 
         protected $conexion;
 
-        public function Conexion() {
+        protected function Conexion() {
 
             try {
                 //code...

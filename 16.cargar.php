@@ -1,6 +1,7 @@
 <?php
     require '../php/dbconnect.php';
-    $registros = $conn->query("SELECT * FROM Estados");
+    $estados = new Conexion();
+    $array = '';
 ?>
 
 <!DOCTYPE html>
