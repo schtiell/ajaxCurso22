@@ -11,7 +11,7 @@
 
         //Metodo constructor de la clase Conexión
         protected function __construct() {
-            
+
             try {
                 //code...
                 $this->conexion = new PDO("mysql:host=$this->host; dbname=$this->dbname", $this->username, $this->password);

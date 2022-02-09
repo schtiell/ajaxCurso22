@@ -17,16 +17,15 @@
         public function listarComentarios ($inicio,$fin){
 
             try {
-                
+
                 $consulta = "SELECT * FROM comentarios LIMIT $inicio,$fin";
                 $query  = $this -> conexion -> prepare($consulta);
                 $query -> execute();
                 return $query;
                 $query -> closeCursor();
                 $this -> conexion = null;
-
             } catch (Exception $e) {
-                
+
                 echo "Error al realizar la consulta" . $e->getMessage();
             }
         }

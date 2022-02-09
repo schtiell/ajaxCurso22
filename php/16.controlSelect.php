@@ -1,7 +1,5 @@
 <?php
-    require '../php/dbconnect.php';
-    $estados = new Conexion();
-    $array = '';
+    require_once './Estados.php';
 ?>
 
 <!DOCTYPE html>
@@ -34,18 +32,23 @@
 
         <hr>
 
-        <h2></h2>
+        <h2>Select Control Dínamico: <small>MySql, Ajax, Php y Javascript</small></h2>
 
         <label for="estados">Estado:</label>
         <select name="estados" id="estados" class="form-control">
-            <option value="0">Seleccionar</option>
-
-            <?
-                while($estado = $registros->fetch(PDO::FETCH_ASSOC)){
-                    echo '<option value="'.$estado['id'].'">'.$estado['estado'].'</option>';
-                }
+        <option value="0">Seleccionar</option>
+        <?php
+            $estado = new Estados();
+            $array = $estado->listar();
+            while ($row = $array->fetch(PDO::FETCH_ASSOC)) {
+                # code...
+                $id = $row['id'];
+                $nombreEstado = $row['estado'];
             ?>
-
+            <option value="<?php echo $id; ?>"><?php echo $nombreEstado; ?></option>
+            <?
+            }
+        ?>
         </select>
 
         <span id="espera"></span>
