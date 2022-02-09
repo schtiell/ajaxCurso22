@@ -1,7 +1,8 @@
 
 <?php
 
-    require_once 'dbconnect.php';
+    require_once './config.php';
+    require_once './dbconnect.php';
 
     class Estados Extends Conexion {
 
@@ -19,8 +20,9 @@
                 return $query;
                 $query -> closeCursor();
 
-            } catch (\Throwable $th) {
-                //throw $th;
+            } catch (Exception $e) {
+                
+                echo "Error al realizar la consulta: " . $e->getMessage();
             }
 
 
