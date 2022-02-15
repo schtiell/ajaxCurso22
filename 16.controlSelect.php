@@ -1,5 +1,5 @@
 <?php
-    require_once './Estados.php';
+    require_once $_SERVER['DOCUMENT_ROOT']."/php/Estados.php";
 ?>
 
 <!DOCTYPE html>
@@ -36,17 +36,19 @@
 
         <label for="estados">Estado:</label>
         <select name="estados" id="estados" class="form-control">
-        <option value="0">Seleccionar</option>
-        <?php
+            <option value="0">Seleccionar</option>
+
+            <?php
             $estado = new Estados();
-            $array = $estado->listar();
-            while ($row = $array->fetch(PDO::FETCH_ASSOC)) {
-                # code...
+            $array = $estado->listarEstados();
+
+            while($row = $array->fetch(PDO::FETCH_ASSOC)) {
                 $id = $row['id'];
-                $nombreEstado = $row['estado'];
-            ?>
-            <option value="<?php echo $id; ?>"><?php echo $nombreEstado; ?></option>
-            <?
+                $estado = $row['estado'];
+
+                ?>
+                <option value="<?php echo $id; ?>"><?php echo $estado; ?></option>
+                <?php
             }
         ?>
         </select>
@@ -55,7 +57,7 @@
 
         <label for="municipios">Municipio:</label>
         <select name="municipios" id="municipios" class="form-control">
-            <option value="0">Seleccionar</option>
+            <option value="#">Seleccionar</option>
         </select>
 
     </div>

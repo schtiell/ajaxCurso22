@@ -1,4 +1,6 @@
 <?php
+
+    $root = $_SERVER['DOCUMENT_ROOT'];
     class Config{
 
         /*

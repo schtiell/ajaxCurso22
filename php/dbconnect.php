@@ -1,7 +1,7 @@
 <?php
 
     //Importando las variables para la conexión de la bd
-    require_once './config.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/php/config.php';
 
 
     //Clase Conexión que herada de la clase Config
@@ -10,7 +10,7 @@
         protected $conexion;
 
         //Metodo constructor de la clase Conexión
-        protected function __construct() {
+        public function __construct() {
 
             try {
                 //code...
