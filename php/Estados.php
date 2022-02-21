@@ -28,7 +28,7 @@
         public function municipiosPorEstado ($idEstado) {
             try {
 
-                $consulta = "SELECT municipios_id FROM Estados_Municipios WHERE estados_id = :idEstado";
+                $consulta = "SELECT municipios_id FROM Estados_Municipios WHERE estados_id = :idEstado ORDER BY 'municipios_id' ASC";
                 $query = $this->conexion->prepare($consulta);
                 $query -> execute(array(':idEstado' => $idEstado));
                 return $query;
@@ -45,7 +45,7 @@
         public function listarMunicipios ($idMunicipio){
             try {
 
-                $consulta = "SELECT * FROM Municipios WHERE id = :idMunicipio";
+                $consulta = "SELECT * FROM Municipios WHERE id = :idMunicipio ORDER BY 'Municipio' ASC";
                 $query = $this -> conexion -> prepare($consulta);
                 $query -> execute(array(':idMunicipio' => $idMunicipio));
                 return $query;

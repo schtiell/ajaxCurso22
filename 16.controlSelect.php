@@ -12,12 +12,18 @@
     <!-- Importando la libreria de jQuery -->
     <script src="./js/jquery-3.6.0.min.js"></script>
 
+    <!-- Importando la libreria local de bootstrap 4 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css">
+
     <!-- Importando el CDN de bootstrap 4 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
 
     <!-- Importando los estilos css -->
     <link rel="stylesheet" href="./css/16.estilos.css" type="text/css">
+
+    <link rel="shortcut icon" href="./img" type="image/x-icon">
     <title>Cargar un control de tipo select</title>
+
 </head>
 <body>
     <div class="container">
@@ -57,7 +63,7 @@
 
         <label for="municipios">Municipio:</label>
         <select name="municipios" id="municipios" class="form-control">
-            <option value="#">Seleccionar</option>
+            <option value="0">Seleccionar</option>
         </select>
 
     </div>
