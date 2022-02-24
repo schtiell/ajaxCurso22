@@ -42,18 +42,27 @@ let procesarEventos = function () {
         if (conexion.status == 200) {
             //console.log(`Success ${conexion.status}`);
 
+            //Seleccionando el elemento html con id espera y escribiendo espacio en blanco en el DOM
             let espera = document.querySelector("#espera");
             espera.innerHTML = " ";
 
+            //Almacenando la respuesta en fotmato xml del servidor
             let respuestaXML = conexion.responseXML;
             
+            //Como la respuesta es un array con multiples etiqutas xml llamadas materia entonces se utiliza la propiedad querySelectorAll()
             let arrayMaterias = respuestaXML.querySelectorAll('materia');
             console.log(arrayMaterias);
 
+            //S llama al elemento select con id materias
             let materias = document.querySelector("#materias");
 
+            //Se pone en cero la cantidad de opciones del elemento html select materias
             materias.options.length = 0;
 
+            //El siguiente ciclo for crea un elemento html llamado opcion
+            //Crea un nodo texto con el valor del primer hijo de la posicion elemento en la posicion actual del arry.
+            //Agrega el nodo de texto al elemento opcion
+            //Agrega el elemento opcion al elemento materias
             for (let i = 0; i < arrayMaterias.length; i++) {
 
                 let opcion = document.createElement('option');
