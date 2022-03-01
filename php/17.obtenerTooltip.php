@@ -7,22 +7,26 @@
     switch ($codigo) {
         case 'c1':
             # code...
+            sleep(1);
             echo "<p> Primer tooltip </p>";
             break;
         
         case 'c2':
             # code...
+            sleep(1);
             echo "<p> Segundo tooltip </p>";
             break;
         
-        case 'c1':
+        case 'c3':
             # code...
+            sleep(1);
             echo "<p> Tercer tooltip </p>";
             break;
-        
-        default:
+
+        case 'c4':
             # code...
-            echo "<p> Es el último tooltip </p>";
+            sleep(1);
+            echo "<p> Cuarto tooltip </p>";
             break;
     }
 ?>

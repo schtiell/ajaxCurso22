@@ -35,7 +35,7 @@ h2{
 
 /* Estilos definidos para el ejemplo: */
 
-.cuadrito{
+.cuadradito{
     background: #D1F2EB;
     border: 1px solid #AEB6BF;
     height: 100px;
@@ -44,7 +44,7 @@ h2{
     z-index: -1;
 }
 
-#divMensaje{
+#divmensaje{
     background: #EDE42F;
     position: absolute;
     visibility: hidden;
