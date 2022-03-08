@@ -1,10 +1,11 @@
-console.log("Mostrar tooltip sobre elemento html!!");
 
-//
+//Funcion inicializarEventos
 let inicializarEventos = function () {
 
-    let array = document.getElementsByTagName('div');
+    //Recuperando todos los elementos con clase cuadradito y almacenados en un array
+    let array = document.querySelectorAll('.cuadradito');
 
+    //Recorrido del arragle de los elementos div para la aplicacion de los diferentes eventos
     for (let i = 0; i < array.length; i++) {
         
         array[i] = addEventListener('mouseover', mostrarTooltip, false);
@@ -12,16 +13,17 @@ let inicializarEventos = function () {
         array[i] = addEventListener('mousemove', actualizarTooltip, false);       
     }
     
-    let elemento = document.createElement('div');
-    elemento.setAttribute('id', 'divmensaje');
-    array = document.getElementsByTagName('div');
-    array[0].appendChild(elemento);
+    //Creando el elemento div que será utilizado como tooltip
+    let tooltip = document.createElement('div');
+    tooltip.setAttribute('id', 'divmensaje');   
+    array = document.querySelectorAll('body');
+    array[0].appendChild(tooltip);
 }
 
-//
+//Funcion para mostrar el tooltip al posicionar el apuntador del mouse sobre el elemento div
 let mostrarTooltip = function (e) {
     
-    let divmensaje = document.getElementById('divmensaje');
+    let divmensaje = document.querySelector('#divmensaje');
     divmensaje.style.visibility = "visible";
     divmensaje.style.left = (e.clientX + document.body.scrollLeft + 15)+'px';
     divmensaje.style.top = (e.clientY + document.body.scrollTop + 15) + 'px';
@@ -30,14 +32,14 @@ let mostrarTooltip = function (e) {
     recuperarServidorTooltip(ref.getAttribute("id")); 
 }
 
-//
+//Funcion para ocultar el tooltip al posicionar el apuntador del mouse sobre el elemento div
 let ocultarTooltip = function (e) {
     
     let divmensaje = document.getElementById("divmensaje");
     divmensaje.style.visibility = "hidden";
 }
 
-//
+//Funcion para actualizar la posición del tooltip al posicionar el apuntador del mouse sobre el elemento div
 let actualizarTooltip = function (e) {
 
     let divmensaje = document.getElementById("divmensaje");
@@ -45,7 +47,7 @@ let actualizarTooltip = function (e) {
     divmensaje.style.top = (e.clientY + document.body.scrollTop + 15) + 'px';
 }
 
-//
+//Funcion ajax para el envío/recepción //Funcion para mostrar el tooltip al posicionar el apuntador del mouse sobre el elemento div
 let recuperarServidorTooltip = function (codigo) {
     
     conexion = new XMLHttpRequest();
@@ -73,7 +75,7 @@ let procesarEventos = function () {
         }
     } else {
 
-        divmensaje.innerHTML =  `<img src="../img/loading_2.gif">`;
+        divmensaje.innerHTML =  `<img src="../img/loader2.gif">`;
     }
 }
 
