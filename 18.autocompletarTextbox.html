@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando la libreria jQuery -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <!-- Importando framework bootstrap 4 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    
+    <!-- Importando los estilos css -->
+    <link rel="stylesheet" type="text/css" href="./css/18.estilos.css">
+
+    <title>Autocompletar un control de tipo text</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Objeto XMLHttpRequest:
+            <small>Autocompletar un control de tipo text</small>
+        </h1>
+
+        <p>La finalidad es implementar con AJAX el concepto de autocompletar o también conocido como lista de sugerencias. A medida que escribimos caracteres dentro de un control de tipo text mostraremos un conjunto de palabras que comienzan con los caracteres ingresados hasta el momento.</p>
+
+        <hr>
+
+        <h2>Ejercicio: </h2>
+        
+        <form action="#">
+            <label for="nombre">Ingresar un nombre: </label>
+            <input type="text" name="nombre" id="palabra"    autocomplete="off">
+
+            <div id="resultados">
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="buscar">
+        </form>
+
+        <script src="./js/18.autocompletarTextbox.js"></script>
+    </div>
+</body>
+</html>

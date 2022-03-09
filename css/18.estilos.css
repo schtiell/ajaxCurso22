@@ -1,0 +1,54 @@
+/*Estilos para plantilla*/
+
+.container{
+    display: block;
+    text-align: center;
+    background-color: #FAFAFA;
+    color: #212F3D;
+    font-size: 16px;
+    padding: 20px 30px;
+}
+
+small{
+    display: block;
+    color: #8C9193;
+}
+
+hr{
+    margin: 40px;
+}
+
+h1{
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+p{
+    margin: 20px;
+    text-align: justify;
+}
+
+h2{
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.btn{
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+}
+
+/* Estilos propios del ejercicio: */
+
+#resultados {
+    position:absolute;
+    background:#ff0;
+  }
