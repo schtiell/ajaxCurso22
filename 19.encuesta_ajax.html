@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando la libreria jQuery -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <!-- Importando la libreria bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- Importando los estilos css -->
+    <link rel="stylesheet" href="./css/19.estilos.css" type="text/css">
+    <title>Encuenta utilizando aJax</title>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Objeto XMLHttpRequest:
+            <small>Encuesta con aJax!!!</small>
+        </h1>
+
+        <hr>
+
+        <p>Se confeccionará un nuevo problema donde podemos utilizar AJAX. Vamos a desarrollar una pequeña aplicación para hacer una encuesta.</p>
+
+        <p>La característica principal es que cuando el operador haga su selección procederemos a enviar la selección al servidor y generaremos un gráfico en forma dinámica en el servidor y procederemos a actualizar en forma asincrónica solo una parte de la página.</p>
+
+        <hr>
+
+        <h2>Encuesta utilizando Ajax:
+            <small>Para generar una gráfica!</small>
+        </h2>
+
+        <div id="encuesta">
+            <form action="./php/19.datosEncuesta.php" method="post" id="formulario">
+                <fieldset>
+                    <h3>Que lenguaje utiliza para implementaciones dinámicas?</h3>
+                
+                    <input type="radio" name="radio" id="radio2"> PHP <br>
+                    <input type="radio" name="radio" id="radio1"> ASP <br>
+                    <input type="radio" name="radio" id="radio3"> JSP <br>  
+    
+                    <input type="submit" value="Enviar" id="enviar" class="btn btn-success">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/19.datosEncuesta.js"></script>
+</body>
+</html>
