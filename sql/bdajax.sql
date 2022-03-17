@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:8889
--- Tiempo de generación: 20-02-2022 a las 19:46:24
--- Versión del servidor: 5.7.34
--- Versión de PHP: 7.4.21
+-- Servidor: 172.22.0.1:3306
+-- Tiempo de generación: 17-03-2022 a las 20:04:55
+-- Versión del servidor: 10.7.3-MariaDB-1:10.7.3+maria~focal
+-- Versión de PHP: 8.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `comentarios` (
   `nombre` varchar(30) NOT NULL,
   `fecha` date NOT NULL,
   `comentarios` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Volcado de datos para la tabla `comentarios`
@@ -48,13 +48,33 @@ INSERT INTO `comentarios` (`nombre`, `fecha`, `comentarios`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `Encuesta`
+--
+
+CREATE TABLE `Encuesta` (
+  `codigo` int(2) NOT NULL,
+  `pregunta1` int(3) DEFAULT NULL,
+  `pregunta2` int(2) DEFAULT NULL,
+  `pregunta3` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `Encuesta`
+--
+
+INSERT INTO `Encuesta` (`codigo`, `pregunta1`, `pregunta2`, `pregunta3`) VALUES
+(1, 6, 8, 4);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `Estados`
 --
 
 CREATE TABLE `Estados` (
   `id` int(2) NOT NULL,
   `estado` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Volcado de datos para la tabla `Estados`
@@ -104,7 +124,7 @@ CREATE TABLE `Estados_Municipios` (
   `id` int(11) NOT NULL,
   `estados_id` int(11) NOT NULL,
   `municipios_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Volcado de datos para la tabla `Estados_Municipios`
@@ -2578,7 +2598,7 @@ INSERT INTO `Estados_Municipios` (`id`, `estados_id`, `municipios_id`) VALUES
 CREATE TABLE `Municipios` (
   `id` int(4) NOT NULL,
   `Municipio` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Volcado de datos para la tabla `Municipios`
