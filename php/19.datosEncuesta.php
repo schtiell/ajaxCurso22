@@ -1,195 +1,55 @@
 <?php
-$preg=$_REQUEST['opcion'];
 
+    require_once $_SERVER['DOCUMENT_ROOT']."/php/Encuesta.php";
+    require_once $_SERVER['DOCUMENT_ROOT']."/php/19.Grafica.php";
 
-$conexion=mysqli_connect("localhost","root","","bdajax") or
-    die("Problemas con la conexión");
+    $pregunta = $_REQUEST['opcion'];
+    $opcion = new Encuesta();
 
-    if ($preg==1)
-  $registros=mysqli_query($conexion,"update encuesta
-                          set pregunta1=pregunta1+1 
-                        where codigo=1") or
-    die("Problemas en el select:".mysqli_error($conexion));
-if ($preg==2)
-  $registros=mysqli_query($conexion,"update encuesta
-                          set pregunta2=pregunta2+1 
-                        where codigo=1") or
-    die("Problemas en el select:".mysqli_error($conexion));
-if ($preg==3)
-  $registros=mysqli_query($conexion,"update encuesta
-                          set pregunta3=pregunta3+1 
-                        where codigo=1") or
-    die("Problemas en el select:".mysqli_error($conexion));
-
-$registro=mysqli_query($conexion,"select * from encuesta where codigo=1") or
-  die(mysqli_error($conexion));
-$reg=mysqli_fetch_array($registro);
-
-$barra=new Barra(500,300);
-$barra->fijarprofundidad(20);
-$barra->sumar($reg['pregunta1'],"PHP");
-$barra->sumar($reg['pregunta2'],"ASP");
-$barra->sumar($reg['pregunta3'],"JSP");
-$barra->graficar();
-
-class Barra {
-    var $ancho;
-    var $alto;
-    var $imagen;
-    var $profundidad;
-
-    var $colorfondo;
-    var $vectorcolorfondo;
-    var $colorbarra;
-    var $vectorcolorbarra;
-    var $colorvalores;
-    //almacena los valores y los titulos de cada barra
-    var $datos;
-
-    function sumar($valor,$titulo)
-    {
-    	$indice=count($this->datos);
-    	$this->datos[$indice]['valor']=$valor;
-        $this->datos[$indice]['titulo']=$titulo;
+    
+    $arreglo = $opcion -> mostrarDatosEncuesta();
+    while ($row = $arreglo -> fetch(PDO::FETCH_ASSOC)) {
+        # code...
+        $pregunta1 = $row['pregunta1'];
+        $pregunta2 = $row['pregunta2'];
+        $pregunta3 = $row['pregunta3'];
     }
 
-    function fijarcolorfondo($rojo,$verde,$azul)
-    {
-        $this->vectorcolorfondo[0]=$rojo;
-        $this->vectorcolorfondo[1]=$verde;
-        $this->vectorcolorfondo[2]=$azul;
-	$this->colorfondo=ImageColorAllocate($this->imagen,$this->vectorcolorfondo[0],$this->vectorcolorfondo[1],$this->vectorcolorfondo[2]);
-   	ImageFill($this->imagen,0,0,$this->colorfondo);
-    }
-
-    function fijarcolorbarra($rojo,$verde,$azul)
-    {
-        $this->vectorcolorbarra[0]=$rojo;
-        $this->vectorcolorbarra[1]=$verde;
-        $this->vectorcolorbarra[2]=$azul;
-        $this->colorbarra=ImageColorAllocate($this->imagen,$this->vectorcolorbarra[0],		   $this->vectorcolorbarra[1],$this->vectorcolorbarra[2]);
-    }
-
-    function fijarprofundidad($profundidad)
-    {
-    	$this->profundidad=$profundidad;
+    
+    switch ($pregunta) {
+        case 1:
+            # code...
+            $array = $opcion -> actualizarDatosEncuesta('pregunta1', $pregunta1, 1);
+            break;
+        case 2:
+            # code...
+            $array = $opcion -> actualizarDatosEncuesta('pregunta2', $pregunta2, 1);
+            break;
+        
+        case 3:
+            # code...
+            $array = $opcion -> actualizarDatosEncuesta('pregunta3', $pregunta3, 1);
+            break;
+        
+        default:
+            # code...
+            break;
     }
 
 
-    //Metodo privado
-    function mayor()
-    {
-	$primera=true;
-	$may=0;
-	foreach ($this->datos as $val)
-	{
-	    if ($primera)
-	    {
-		$primera=false;
-	        $may=$val['valor'];
-	    }
-	    if ($val['valor']>$may)
-  	        $may=$val['valor'];
-	}
-        return $may;
+    $arreglo = $opcion -> mostrarDatosEncuesta();
+    while ($row = $arreglo -> fetch(PDO::FETCH_ASSOC)) {
+        # code...
+        $pregunta1 = $row['pregunta1'];
+        $pregunta2 = $row['pregunta2'];
+        $pregunta3 = $row['pregunta3'];
     }
 
-    function graficarsombraizquierda($columna,$y1,$y2)
-    {
-       $rojo=$this->vectorcolorbarra[0]-90;
-       if ($rojo<0)
-       	  $rojo=0;
-       $verde=$this->vectorcolorbarra[1]-90;
-       if ($verde<0)
-       	  $verde=0;
-       $azul=$this->vectorcolorbarra[2]-90;
-       if ($azul<0)
-       	  $azul=0;
+    $barra = new Barra(500,300);
+    $barra -> fijarprofundidad(20);
+    $barra -> sumar($pregunta1,"PHP");
+    $barra -> sumar($pregunta2,"ASP");
+    $barra -> sumar($pregunta3,"JSP");
+    $barra -> graficar();
 
-       $colorsombra=imageColorAllocate($this->imagen,$rojo,$verde,$azul);
-       $puntos[]=$columna;
-       $puntos[]=$y1;
-       $puntos[]=$columna;
-       $puntos[]=$y2;
-       $puntos[]=$columna+$this->profundidad;
-       $puntos[]=$y2-$this->profundidad;
-       $puntos[]=$columna+$this->profundidad;
-       $puntos[]=$y1-$this->profundidad;
-
-       imagefilledpolygon($this->imagen,$puntos,4,$colorsombra);
-       $colorbordebarra=imageColorAllocate($this->imagen,0,0,0);
-       imagepolygon($this->imagen,$puntos,4,$colorbordebarra);
-    }
-
-
-    function graficarsombrasuperior($columna,$y1,$anchobarra)
-    {
-       $rojo=$this->vectorcolorbarra[0]-40;
-       if ($rojo<0)
-       	  $rojo=0;
-       $verde=$this->vectorcolorbarra[1]-40;
-       if ($verde<0)
-       	  $verde=0;
-       $azul=$this->vectorcolorbarra[2]-40;
-       if ($azul<0)
-       	  $azul=0;
-
-       $colorsombra=imageColorAllocate($this->imagen,$rojo,$verde,$azul);
-       $puntos[]=$columna;
-       $puntos[]=$y1;
-       $puntos[]=$columna+$anchobarra;
-       $puntos[]=$y1;
-       $puntos[]=$columna+$anchobarra+$this->profundidad;
-       $puntos[]=$y1-$this->profundidad;
-       $puntos[]=$columna+$this->profundidad;
-       $puntos[]=$y1-$this->profundidad;
-
-       imagefilledpolygon($this->imagen,$puntos,4,$colorsombra);
-       $colorbordebarra=imageColorAllocate($this->imagen,0,0,0);
-       imagepolygon($this->imagen,$puntos,4,$colorbordebarra);
-    }
-
-    function Barra($ancho,$alto)
-    {
-    	$this->ancho=$ancho;
-        $this->alto=$alto;
-		$this->imagen=imageCreate($this->ancho,$this->alto);
-        $this->vectorcolorfondo[0]=0;
-        $this->vectorcolorfondo[1]=0;
-        $this->vectorcolorfondo[2]=255;
-	$this->colorfondo=ImageColorAllocate($this->imagen,$this->vectorcolorfondo[0],$this->vectorcolorfondo[1],$this->vectorcolorfondo[2]);
-	ImageFill($this->imagen,0,0,$this->colorfondo);
-        $this->vectorcolorbarra[0]=255;
-        $this->vectorcolorbarra[1]=255;
-        $this->vectorcolorbarra[2]=0;
-        $this->colorbarra=ImageColorAllocate($this->imagen,$this->vectorcolorbarra[0],
-$this->vectorcolorbarra[1],$this->vectorcolorbarra[2]);
-	$this->profundidad=10;
-	$this->colorvalores=ImageColorAllocate($this->imagen,0,0,0);
-   }
-
-   function graficar()
-   {
-
-    	$may=$this->mayor();
-        $anchobarra=($this->ancho-110)/count($this->datos);
-	$x1=10;
-	$y1=$this->alto-50;
-        $colorbordebarra=imageColorAllocate($this->imagen,0,0,0);
-	foreach($this->datos as $reg)
-	{
-	   $altura=($reg['valor']/$may)*($this->alto-80);
-	   imagefilledrectangle($this->imagen,$x1,$y1-$altura,$x1+$anchobarra,$y1,$this->colorbarra);
-	   imagerectangle($this->imagen,$x1,$y1-$altura,$x1+$anchobarra,$y1,$colorbordebarra);
-	   ImageString($this->imagen,2,$x1+3,$y1,$reg['titulo'],$this->colorbarra);
-           $this->graficarsombraizquierda($x1+$anchobarra,$y1-$altura,$y1);
-           $this->graficarsombrasuperior($x1,$y1-$altura,$anchobarra);
-	   ImageString($this->imagen,2,$x1+3,$y1-$altura+5,$reg['valor'],$this->colorvalores);
-	       $x1=$x1+$anchobarra+(100/count($this->datos));
-	 }
-	 Header ("Content-type: image/png");
-	 ImagePNG ($this->imagen,"encuesta.png");
-	 ImageDestroy($this->imagen);
- }
-}
 ?>

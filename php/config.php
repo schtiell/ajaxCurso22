@@ -18,6 +18,7 @@
         protected $username = 'root';
         protected $password = 123456;
         protected $port = 3306;
+        
 
     }
 ?>
