@@ -6,8 +6,7 @@
     class Encuesta extends Conexion{
 
         public function __construct(){
-            parent :: __construct();
-    
+            parent::__construct();
         }
 
         //Método para listar los datos de la encuesta
@@ -19,7 +18,7 @@
                 $query = $this -> conexion -> prepare($consulta);
                 $query -> execute();
                 return $query;
-                $query-> closeCursor();
+                $query -> closeCursor();
                 $this -> conexion = null;
 
             } catch (Exception $e) {
@@ -32,8 +31,7 @@
         public function actualizarDatosEncuesta($columna, $valorActual, $voto){
             try {
                 //code...
-               
-                $actualizacion = "UPDATE Encuesta SET $columna = :valor + :voto WHERE codigo = 1";  
+                $actualizacion = "UPDATE Encuesta SET $columna = :valor + :voto WHERE codigo = 1";
                 $query = $this -> conexion-> prepare($actualizacion);
                 //$query -> bindValue(':columna', $columna, PDO::PARAM_STR);
                 $query -> bindValue(':valor', $valorActual, PDO::PARAM_INT);
