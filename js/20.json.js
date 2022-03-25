@@ -23,9 +23,9 @@ let presionarBoton = function (e) {
 
 let imprimirDatos = function (pc) {
 
-    alert (` Microprocesador: ${pc.microprocesador}
-        Memoria: ${pc.memoria} Mb    
-        Discos: ${pc.discos[0]}, ${pc.discos[1]} Mb`);
+    alert(`Microprocesador: ${pc.microprocesador}\nMemoria: ${pc.memoria} Mb\nDiscos: ${pc.discos[0]}, ${pc.discos[1]} Mb`);
+
+    console.log(`Microprocesador: ${pc.microprocesador}\nMemoria: ${pc.memoria} Mb\nDiscos: ${pc.discos[0]}, ${pc.discos[1]} Mb`);
 }
 
 addEventListener("load", inicializarEventos, false);
