@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando la libreria de jquery -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <!-- Importando el framework bootstrap 4 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- Importando los estilos css3 -->
+    <link rel="stylesheet" href="./css/20.estilos.css" type="text/css">
+    
+    <!-- Importando favicon -->
+    <link rel="icon" href="./ico/json.png" type="image/x-icon">
+
+    <title>Json: JavaScript Object Notation</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>
+            Objeto XMLHttpRequest:
+            <small>JSON: JavaScript Object Notation</small>
+        </h1>
+
+        <hr>
+
+        <p>JSON es el acrónimo de JavaScript Object Notation.</p>
+
+        <p>JSON es un formato alternativo de envío y recepción de datos, es decir remplaza a XML o el envío de texto plano.</p>
+
+        <p>JSON utilza objetos literales y arrays literales como modelo de datos</p>
+
+        <pre>
+            Array literal:
+
+            var usuario=["juan","26"];
+            alert(usuario[0]); //Imprimimos el primer elemento del array
+            alert(usuario[1]); //Imprimimos el segundo elemento del array
+        </pre>
+
+        <p>Los elementos de un array literal se encierran entre corchetes y los valores contenidos van separados por coma. Cuando se define un array literal no se indica a cada elemento de que tipo se trata, podemos almacenar cadenas (entre comillas), números, valores lógicos (true,false) y el valor null. Para acceder a los elementos de un array literal lo ahce por su nombre y entre corchetes se indica que elementos queremos acceder</p>
+
+        <pre>
+            Objeto literal:
+
+            var persona={
+                "nombre":"juan",
+                "clave":"xyz",
+                "edad":"26"
+              };
+
+            alert(persona.nombre);  //Imprime el valor de la propiedad nombre del objeto persona.
+            alert(persona['nombre']); 
+        </pre>
+
+        <p>La sintaxis de JSON difiere levemente de lo visto anteriormente:</p>
+
+        <pre>
+            {
+                "nombre":"juan",
+                "edad":"22",
+                "estudios":["primario","secundario"]
+            } 
+        </pre>
+
+        <p>En la sintaxis JSON no aparecen variables, sino directamente se indica entre llaves las propiedades y sus valores.</p>
+
+        <p>También se ha eliminado el punto y como luego de la llave final. El resto es igual.</p>
+
+        <p>La diferencia entre JSON y XML</p>
+
+        <pre>
+            Objeto XML:
+            < persona>
+                < nombre>juan< /nombre>
+                < edad>22< /edad>
+                < estudios>
+                < estudio>primario< /estudio>
+                < estudio>secundario< /estudio>
+                < /estudios>
+            < /persona>
+
+            Objeto JSON:
+            {
+                "nombre":"juan",
+                "edad":"22",
+                "estudios":["primario","secundario"]
+            }
+        </pre>
+
+        <p>Se puede ver que es mucho más directa la definición de esta estructura.</p>
+
+        <p>Si tenemos que transmitir estas estructuras por internet la notación JSON es más liviana.</p>
+
+        <p>Otra ventaja es como recuperamos los datos en el navegador, como vimos si se trata de un archivo XML llamamos al método requestXML y luego accedemos por medio del DOM</p>
+
+        <p>En cambio con JSON al llegar el archivo procedemos a generar una variable en JavaScript que recree el objeto literal, esto mediante la el método parse del objeto JSON:</p>
+
+        <pre>
+            var persona=JSON.parse(conexion1.responseText);
+        </pre>
+
+    </div>
+    
+</body>
+</html>
