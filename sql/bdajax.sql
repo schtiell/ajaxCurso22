@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 172.22.0.1:3306
--- Tiempo de generación: 17-03-2022 a las 20:04:55
--- Versión del servidor: 10.7.3-MariaDB-1:10.7.3+maria~focal
--- Versión de PHP: 8.0.15
+-- Host: localhost:8889
+-- Generation Time: Mar 27, 2022 at 05:45 PM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,23 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bdajax`
+-- Database: `bdajax`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comentarios`
+-- Table structure for table `comentarios`
 --
 
 CREATE TABLE `comentarios` (
   `nombre` varchar(30) NOT NULL,
   `fecha` date NOT NULL,
   `comentarios` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `comentarios`
+-- Dumping data for table `comentarios`
 --
 
 INSERT INTO `comentarios` (`nombre`, `fecha`, `comentarios`) VALUES
@@ -48,36 +48,36 @@ INSERT INTO `comentarios` (`nombre`, `fecha`, `comentarios`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Encuesta`
+-- Table structure for table `Encuenta`
 --
 
-CREATE TABLE `Encuesta` (
+CREATE TABLE `Encuenta` (
   `codigo` int(2) NOT NULL,
-  `pregunta1` int(3) DEFAULT NULL,
-  `pregunta2` int(2) DEFAULT NULL,
-  `pregunta3` int(3) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `pregunta1` int(3) NOT NULL,
+  `pregunta2` int(3) NOT NULL,
+  `pregunta3` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `Encuesta`
+-- Dumping data for table `Encuenta`
 --
 
-INSERT INTO `Encuesta` (`codigo`, `pregunta1`, `pregunta2`, `pregunta3`) VALUES
-(1, 6, 8, 4);
+INSERT INTO `Encuenta` (`codigo`, `pregunta1`, `pregunta2`, `pregunta3`) VALUES
+(1, 2, 4, 2);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Estados`
+-- Table structure for table `Estados`
 --
 
 CREATE TABLE `Estados` (
   `id` int(2) NOT NULL,
   `estado` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `Estados`
+-- Dumping data for table `Estados`
 --
 
 INSERT INTO `Estados` (`id`, `estado`) VALUES
@@ -117,17 +117,17 @@ INSERT INTO `Estados` (`id`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Estados_Municipios`
+-- Table structure for table `Estados_Municipios`
 --
 
 CREATE TABLE `Estados_Municipios` (
   `id` int(11) NOT NULL,
   `estados_id` int(11) NOT NULL,
   `municipios_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `Estados_Municipios`
+-- Dumping data for table `Estados_Municipios`
 --
 
 INSERT INTO `Estados_Municipios` (`id`, `estados_id`, `municipios_id`) VALUES
@@ -2592,16 +2592,16 @@ INSERT INTO `Estados_Municipios` (`id`, `estados_id`, `municipios_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Municipios`
+-- Table structure for table `Municipios`
 --
 
 CREATE TABLE `Municipios` (
   `id` int(4) NOT NULL,
   `Municipio` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `Municipios`
+-- Dumping data for table `Municipios`
 --
 
 INSERT INTO `Municipios` (`id`, `Municipio`) VALUES
@@ -5064,18 +5064,65 @@ INSERT INTO `Municipios` (`id`, `Municipio`) VALUES
 (2456, 'Juchipila'),
 (2457, 'Moyahua de Estrada');
 
+-- --------------------------------------------------------
+
 --
--- Índices para tablas volcadas
+-- Table structure for table `Usuarios`
+--
+
+CREATE TABLE `Usuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(20) DEFAULT NULL,
+  `nombre` varchar(20) DEFAULT NULL,
+  `sexo` varchar(1) DEFAULT NULL,
+  `nivel` tinyint(4) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `telefono` varchar(20) DEFAULT NULL,
+  `marca` varchar(20) DEFAULT NULL,
+  `compania` varchar(20) DEFAULT NULL,
+  `saldo` float DEFAULT NULL,
+  `activo` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Usuarios`
+--
+
+INSERT INTO `Usuarios` (`id`, `usuario`, `nombre`, `sexo`, `nivel`, `email`, `telefono`, `marca`, `compania`, `saldo`, `activo`) VALUES
+(1, 'BRE2271', 'BRENDA', 'M', 2, 'brenda@live.com', '655-330-5736', 'SAMSUNG', 'IUSACELL', 100, 1),
+(2, 'OSC4677', 'OSCAR', 'H', 3, 'oscar@gmail.com', '655-143-4181', 'LG', 'TELCEL', 0, 1),
+(3, 'JOS7086', 'JOSE', 'H', 3, 'francisco@gmail.com', '655-143-3922', 'NOKIA', 'MOVISTAR', 150, 1),
+(4, 'LUI6115', 'LUIS', 'H', 0, 'enrique@outlook.com', '655-137-1279', 'SAMSUNG', 'TELCEL', 50, 1),
+(5, 'LUI7072', 'LUIS', 'H', 1, 'luis@hotmail.com', '655-100-8260', 'NOKIA', 'IUSACELL', 50, 0),
+(6, 'DAN2832', 'DANIEL', 'H', 0, 'daniel@outlook.com', '655-145-2586', 'SONY', 'UNEFON', 100, 1),
+(7, 'JAQ5351', 'JAQUELINE', 'M', 0, 'jaqueline@outlook.com', '655-330-5514', 'BLACKBERRY', 'AXEL', 0, 1),
+(8, 'ROM6520', 'ROMAN', 'H', 2, 'roman@gmail.com', '655-330-3263', 'LG', 'IUSACELL', 50, 1),
+(9, 'BLA9739', 'BLAS', 'H', 0, 'blas@hotmail.com', '655-330-3871', 'LG', 'UNEFON', 100, 1),
+(10, 'JES4752', 'JESSICA', 'M', 1, 'jessica@hotmail.com', '655-143-6861', 'SAMSUNG', 'TELCEL', 500, 1),
+(11, 'DIA6570', 'DIANA', 'M', 1, 'diana@live.com', '655-143-3952', 'SONY', 'UNEFON', 100, 0),
+(12, 'RIC8283', 'RICARDO', 'H', 2, 'ricardo@hotmail.com', '655-145-6049', 'MOTOROLA', 'IUSACELL', 150, 1),
+(13, 'VAL6882', 'VALENTINA', 'M', 0, 'valentina@live.com', '655-137-4253', 'BLACKBERRY', 'AT&T', 50, 0),
+(14, 'BRE8106', 'BRENDA', 'M', 3, 'brenda2@gmail.com', '655-100-1351', 'MOTOROLA', 'NEXTEL', 150, 1),
+(15, 'LUC4982', 'LUCIA', 'M', 3, 'lucia@gmail.com', '655-145-4992', 'BLACKBERRY', 'IUSACELL', 0, 1),
+(16, 'JUA2337', 'JUAN', 'H', 0, 'juan@outlook.com', '655-100-6517', 'SAMSUNG', 'AXEL', 0, 0),
+(17, 'ELP2984', 'ELPIDIO', 'H', 1, 'elpidio@outlook.com', '655-145-9938', 'MOTOROLA', 'MOVISTAR', 500, 1),
+(18, 'JES9640', 'JESSICA', 'M', 3, 'jessica2@live.com', '655-330-5143', 'SONY', 'IUSACELL', 200, 1),
+(19, 'LET4015', 'LETICIA', 'M', 2, 'leticia@yahoo.com', '655-143-4019', 'BLACKBERRY', 'UNEFON', 100, 1),
+(20, 'LUI1076', 'LUIS', 'H', 3, 'luis2@live.com', '655-100-5085', 'SONY', 'UNEFON', 150, 1),
+(21, 'HUG5441', 'HUGO', 'H', 2, 'hugo@live.com', '655-137-3935', 'MOTOROLA', 'AT&T', 500, 1);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `Estados`
+-- Indexes for table `Estados`
 --
 ALTER TABLE `Estados`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Estados_Municipios`
+-- Indexes for table `Estados_Municipios`
 --
 ALTER TABLE `Estados_Municipios`
   ADD PRIMARY KEY (`id`),
@@ -5083,32 +5130,44 @@ ALTER TABLE `Estados_Municipios`
   ADD KEY `municipios_id_refs_id_6d8b23ec` (`municipios_id`);
 
 --
--- Indices de la tabla `Municipios`
+-- Indexes for table `Municipios`
 --
 ALTER TABLE `Municipios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Indexes for table `Usuarios`
+--
+ALTER TABLE `Usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `Estados`
+-- AUTO_INCREMENT for table `Estados`
 --
 ALTER TABLE `Estados`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT de la tabla `Estados_Municipios`
+-- AUTO_INCREMENT for table `Estados_Municipios`
 --
 ALTER TABLE `Estados_Municipios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2458;
 
 --
--- AUTO_INCREMENT de la tabla `Municipios`
+-- AUTO_INCREMENT for table `Municipios`
 --
 ALTER TABLE `Municipios`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2458;
+
+--
+-- AUTO_INCREMENT for table `Usuarios`
+--
+ALTER TABLE `Usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
