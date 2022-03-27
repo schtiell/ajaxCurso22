@@ -13,7 +13,7 @@
 
         //Atributos protegidos que solo pueden ser accedidos desde la case propia o de clases que hereden de esta.
         //protected $host = 'localhost';
-        protected $host = '172.22.0.3';
+        protected $host = 'localhost';
         protected $dbname = 'bdajax';
         protected $username = 'root';
         protected $password = 123456;

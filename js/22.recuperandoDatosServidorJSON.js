@@ -1,17 +1,23 @@
-//
+//Inici los evento al hacer clic en el boton
 let inicializarEventos = function (){
     console.info("Recuperando datos del servidor JSON");
     let boton = document.querySelector("#boton1");
     boton.addEventListener('click', presionarBoton, false);
 }
 
-//
+//Obtiene el valor seleccionado
 let presionarBoton = function (e) {
-    let dni = document.querySelector("#dni");
-    recuperarDatos(dni.value);
+    let dni = document.querySelector("#dni").value;
+
+    if (dni == 0) {
+        let resultados = document.querySelector("#resultados");
+        resultados.innerHTML = "Debes elegir una opción valida";
+    } else {
+        recuperarDatos(dni.value);
+    }
 }
 
-//
+// Inicia la peticion asíncrona al servidor para solicitar los datos deacuerdo al dni enviado
 let recuperarDatos = function (dni){
     conexion = new XMLHttpRequest();
     conexion.onreadystatechange = procesarEventos;
@@ -19,22 +25,29 @@ let recuperarDatos = function (dni){
     conexion.send();
 }
 
-//
+//Imprime en el DOM la respuesta del servidor transformada en formato json
 let procesarEventos = function () {
     let resultados = document.querySelector("#resultados");
 
     if(conexion.readyState == 4){
+
         let datos = JSON.parse(conexion.responseText);
-        let salida = `Apellido: ${datos.apellido} <br>`;
-        salida = `${salida} Nombre: ${datos.nombre} <br>`;
-        salida = `${salida} Dirección donde debe votar: ${datos.direccion}`;
-        resultados.innerHTML = salida;
+
+        console.log(datos);
+
+        resultados.innerHTML = `
+                                <strong>    Usuario:    </strong>   ${datos.Usuario}<br>
+                                <strong>    Nombre:     </strong>   ${datos.Nombre}<br>
+                                <strong>    Sexo:       </strong>   ${datos.Sexo}<br>
+                                <strong>    email:      </strong>   ${datos.Correo}<br>
+                                <strong>    Telefono:   </strong>   ${datos.Telefono}
+                                `;
 
     }else{
-        resultados.innerHTML = `../img/loader2.gif`;
+        resultados.innerHTML = "<img src='../img/loader2.gif' />";
     }
 }
 
-//
+//Variables global de conexión y inicio de los eventos al cargar el sitio por completo
 var conexion;
 addEventListener('load', inicializarEventos, false);

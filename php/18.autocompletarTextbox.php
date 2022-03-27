@@ -10,9 +10,9 @@
     if (strlen($palabra) >= 1 ){
 
         # Ciclo hasta completar la longitud del arreglo
-        for ($i=0; $i < count($arreglo) ; $i++) { 
+        for ($i=0; $i < count($arreglo) ; $i++) {
             # code...
-            
+
             #substr($cadena, $inicio, $longitudDeCadena)
             if ($palabra == substr($arreglo[$i],0,strlen($palabra))){
 
@@ -28,7 +28,7 @@
     #Si el arreglo está definido
     if (isset($arreglo_igual)) {
         # code...
-        for ($i=0; $i <count($arreglo_igual) ; $i++) { 
+        for ($i=0; $i <count($arreglo_igual) ; $i++) {
             # code...
             $xml.="<palabra>".$arreglo_igual[$i]."</palabra>\n";
         }

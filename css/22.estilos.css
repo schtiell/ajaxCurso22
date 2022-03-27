@@ -33,9 +33,19 @@ h2{
     font-weight: bold;
 }
 
+#dni{
+    width: 130px;
+    margin: 20px auto;
+}
+
 label,
-button,
-input{
+button{
     display: block;
     margin: 10px auto;
+}
+
+#resultados{
+    margin: 20px auto;
+    text-align: left;
+    padding: 10px;
 }

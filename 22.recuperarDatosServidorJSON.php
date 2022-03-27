@@ -40,11 +40,29 @@
             <small>Solución</small>
         </h2>
 
-        <label for="">Ingrese el dni del empleado</label>
-        <input type="text" name="dni" id="dni" size="10">
+        <label for="dni">Selecciona el dni del empleado:</label>
+        <select name="" id="dni" class="form-control">
+            <option value="0">Seleccionar</option>
+
+            <?php
+                require $_SERVER['DOCUMENT_ROOT']."/php/Usuario.php";
+                $usuarios = new Usuario();
+                $array = $usuarios->getIdsUsuarios();
+
+                while ($row = $array->fetch(PDO::FETCH_ASSOC)) {
+                    $id = $row['id'];
+                    ?>
+
+                    <option value="<?php echo $id; ?>"><?php echo $id; ?></option>
+
+                    <?php
+                }
+            ?>
+
+        </select>
         <button class="btn btn-primary" id="boton1">Enviar</button>
 
-        <div id="resultado">
+        <div id="resultados">
         </div>
     </div>
     <script src="./js/22.recuperandoDatosServidorJSON.js"></script>

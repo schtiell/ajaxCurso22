@@ -10,7 +10,7 @@
             sleep(1);
             echo "<p> Primer tooltip </p>";
             break;
-        
+
         case 'c2':
             # code...
             sleep(1);
