@@ -42,3 +42,8 @@ label{
     text-align: left;
     padding: 10px;
 }
+
+.table{
+    width: 70%;
+    margin: 20px auto;
+}
