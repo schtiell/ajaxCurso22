@@ -60,7 +60,7 @@
             ?>
 
         </select>
-        <button class="btn btn-primary" id="boton1">Enviar</button>
+        <button class="btn btn-primary" id="botonEnviar">Enviar</button>
 
         <div id="resultados">
         </div>

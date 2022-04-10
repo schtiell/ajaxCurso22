@@ -1,7 +1,7 @@
 //Inici los evento al hacer clic en el boton
 let inicializarEventos = function (){
     console.info("Recuperando datos del servidor JSON");
-    let boton = document.querySelector("#boton1");
+    let boton = document.querySelector("#botonEnviar");
     boton.addEventListener('click', presionarBoton, false);
 }
 
@@ -13,7 +13,7 @@ let presionarBoton = function (e) {
         let resultados = document.querySelector("#resultados");
         resultados.innerHTML = "Debes elegir una opción valida";
     } else {
-        recuperarDatos(dni.value);
+        recuperarDatos(dni);
     }
 }
 

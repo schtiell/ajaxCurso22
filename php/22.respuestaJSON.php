@@ -4,6 +4,8 @@
 
     header('Content-Type: text/txt; charset=utf8');
 
+    sleep(1);
+
     $id = $_REQUEST['dni'];
 
     $usuario = new Usuario();
@@ -17,6 +19,7 @@
         $sexo = $row['sexo'];
         $email = $row['email'];
         $telefono = $row['telefono'];
+        $datos = $row;
     }
 
     echo "{
@@ -26,4 +29,6 @@
         \"Correo\":\"$email\",
         \"Telefono\":\"$telefono\"
     }";
+    //$cadena = json_encode($datos);
+    //echo $cadena;
 ?>
