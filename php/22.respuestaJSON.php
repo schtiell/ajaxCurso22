@@ -25,7 +25,7 @@
         $sexo = $row['sexo'];
         $email = $row['email'];
         $telefono = $row['telefono'];
-        $datos = $row;
+        //$datos = $row;
     }
 
     #Imprimiendo la respuesta generada por el servidor y devualta al usuario de forma asincrona con ajax
