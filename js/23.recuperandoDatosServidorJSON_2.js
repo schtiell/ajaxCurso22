@@ -37,7 +37,9 @@ let procesarEventos = function () {
             let datos = JSON.parse(conexion.responseText);
 
             //Impresion de la respuesta devuelta por el servidor y formateada por la función crearSalida()
-            resultados.innerHTML = crearSalida(datos.id, datos.nombre, datos.usuario, datos.email, datos.telefono, datos.compania);
+            //resultados.innerHTML = crearSalida(datos.id, datos.nombre, datos.usuario, datos.email, datos.telefono, datos.compania);
+
+            resultados.innerHTML = crearSalida(datos);
 
         } else {
 
@@ -51,7 +53,7 @@ let procesarEventos = function () {
 }
 
 //Funcion que crea la cadena de salida de la respuesta devuelta por el servidor
-let crearSalida = function (id, nombre, user, email, tel, compania) {
+let crearSalida = function (obj) {
 
     //Creacion de tabla que será impresa por la función procesarEventos
     return  `<table class="table table-striped table-hover">
@@ -68,12 +70,12 @@ let crearSalida = function (id, nombre, user, email, tel, compania) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td scope='col'>${id}</td>
-                        <td>${nombre}</td>
-                        <td>${user}</td>
-                        <td>${email}</td>
-                        <td>${tel}</td>
-                        <td>${compania}</td>
+                        <td scope='col'>${obj.id}</td>
+                        <td>${obj.nombre}</td>
+                        <td>${obj.usuario}</td>
+                        <td>${obj.email}</td>
+                        <td>${obj.telefono}</td>
+                        <td>${obj.compania}</td>
                     </tr>
                 </tbody>
             </table>`;

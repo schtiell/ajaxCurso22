@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importando libreria jQuery -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <!-- Importando framework bootstrap 4 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" >
+
+    <!-- Importando estilos css -->
+    <link rel="stylesheet" href="./css/23.estilos.css" type="text/css">
+
+    <!-- Importando favicon -->
+    <link rel="shortcut icon" href="./ico/json.png" type="image/x-icon">
+
+    <title>Php a Json: Utilizando la funcion json_encode</title>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Objeto XMLHttpRequest:
+            <small>Recuperando datos de PHP a JSON: Utilizando la función json_encode</small>
+        </h1>
+
+        <hr>
+
+        <p>En el concepto anterior habíamos visto como generar un archivo con formato JSON en el servidor y enviárselo al cliente (navegador). Esta metodología de generar el string con formato JSON puede ser muy engorroso cuando las estructuras comienzan a ser más complejas.</p>
+
+        <p>Se cuenta en PHP con una función que nos facilita dicha actividad llamada: <span>json_encode</span>.</p>
+
+        <p>Confeccionaremos un problema que rescate un conjunto de registros de una tabla MySQL y seguidamente los transforme en formato JSON. En el navegador mediante el método parse del objeto JSON generaremos un objeto literal JavaScript y procederemos a mostrarlo.</p>
+
+        <hr>
+
+        <h2>Recuperar datos del servidor almacenados en una base de datos: <small>En formato JSON utilizando la función json_encode de PHP</small></h2>
+
+        <button id="boton" class="btn btn-primary">Mostrar datos</button>
+
+        <div id="resultados">
+        </div>
+    </div>
+    <script src="./js/24.functionJson_Enconde.js" type="text/javascript"></script>
+</body>
+</html>
