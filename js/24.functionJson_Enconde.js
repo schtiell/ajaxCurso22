@@ -22,7 +22,6 @@ let procesarEventos = function () {
         if (conexion.status == 200) {
 
             let datos = JSON.parse(conexion.responseText);
-
             resultados.innerHTML = mostrarInformacion(datos);
 
         } else {
@@ -52,19 +51,21 @@ let mostrarInformacion = function (obj) {
 
     for (let i = 0; i < obj.length; i++) {
         cadena = `${cadena} <tr>
-                                <td scope='col'>${obj.id}</td>
-                                <td>${obj.nombre}</td>
-                                <td>${obj.email}</td>
-                                <td>${obj.password}</td>
-                                <td>${obj.rol_id}</td>
-                                <td>${obj.creado}</td>
-                                <td>${obj.actualizado}</td>
+                                <td scope="col">${obj[i].id}</td>
+                                <td>${obj[i].nombre}</td>
+                                <td>${obj[i].email}</td>
+                                <td>${obj[i].password}</td>
+                                <td>${obj[i].rol_id}</td>
+                                <td>${obj[i].creado}</td>
+                                <td>${obj[i].actualizado}</td>
                             </tr>`;
     }
 
     cadena =    `${cadena}
                     </tbody>
                 </table>`;
+
+    return cadena;
 }
 
 var conexion;

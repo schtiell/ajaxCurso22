@@ -8,9 +8,9 @@
 
     $array = $user->obtenerEmpleados();
 
-    $data = $array ->fetch (PDO::FETCH_ASSOC);
-
-    $cadena = json_decode($data);
-
+    while ($row = $array->fetch (PDO::FETCH_ASSOC)){
+        $data[] = $row;
+    }
+    $cadena = json_encode($data);
     echo $cadena;
 ?>
