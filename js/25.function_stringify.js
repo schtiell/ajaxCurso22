@@ -26,7 +26,7 @@ let procesarEventos = function () {
 
             //Convirtiendo objeto JSON a objeto Javascript con JSON.parse
             responseServer = JSON.parse(conexion.responseText);
-            resultados.innerHTML = mostrarInformacion(responseServer);
+            resultados.innerHTML= mostrarInformacion(responseServer);
 
         } else {
             console.error(`El estado de la conexion es: ${conexion.status}`);
@@ -39,7 +39,15 @@ let procesarEventos = function () {
 
 let mostrarInformacion = function (obj) {
     //Convirtiendo objeto Javascript a JSON con JSON.stringify
-    return JSON.stringify(obj);
+
+    let cadena = "";
+    for (let i = 0; i < obj.length; i++) {
+        cadena = `${cadena} ${JSON.stringify(obj[i],undefined,2)}`;
+        console.log(JSON.stringify(obj[i],null,2));
+
+    }
+
+    return cadena;
 }
 
 
