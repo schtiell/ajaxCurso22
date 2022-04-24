@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 27, 2022 at 05:45 PM
+-- Generation Time: Apr 24, 2022 at 12:33 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -44,6 +44,44 @@ INSERT INTO `comentarios` (`nombre`, `fecha`, `comentarios`) VALUES
 ('JUAN ORTEGA', '2022-01-05', 'NO LE COMPRENDI TU PROCEDIMIENTO PERO SE AGRADECE EL ESFUERZO'),
 ('JUANA RAMIREZ', '2022-01-06', 'GRAN EXPLICACION'),
 ('LUIS BAROJAS', '2022-01-07', 'MUCHO CODIGO SPPAGGETI');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `empleados`
+--
+
+CREATE TABLE `empleados` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `rol_id` int(11) DEFAULT NULL,
+  `creado` datetime NOT NULL,
+  `actualizado` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `empleados`
+--
+
+INSERT INTO `empleados` (`id`, `nombre`, `email`, `password`, `rol_id`, `creado`, `actualizado`) VALUES
+(1, 'Garland Roberts', 'hollie_emard@reichel.ca', '375f542fcc03', 1, '2010-01-25 11:54:27', '2010-01-25 11:54:27'),
+(2, 'Aliza Leuschke', 'watson_koepp@spencerlarkin.co.uk', 'fc387adac877', 1, '2010-02-25 11:54:27', '2010-02-25 11:54:27'),
+(3, 'Percival VonRueden', 'gideon@donnelly.ca', '2898eed1ce28', 1, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(4, 'Dashawn Renner', 'louie@satterfield.uk', 'f83dd3e7faec', 2, '2010-04-25 11:54:27', '2010-04-25 11:54:27'),
+(5, 'Ms. Eileen Waelchi', 'courtney.schumm@rippin.us', '0c6ff76dfa99', 2, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(6, 'Blaise Gaylord', 'torrey_renner@bradtke.uk', '2071acd0e271', 2, '2010-06-25 11:54:27', '2010-06-25 11:54:27'),
+(7, 'Miss Ephraim Strosin', 'josue@mosciski.biz', NULL, 2, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(8, 'Marilie Vandervort', 'oma_stanton@zulauf.org', NULL, 2, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(9, 'Hailey Corwin', 'toney.reynolds@bogan.biz', NULL, 2, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(10, 'Chase Koss', 'wilton@cole.org', NULL, NULL, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(11, 'Dr. Maximillia Murazik', 'damon.bergnaum@bode.info', NULL, NULL, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(12, 'Dale Gerhold', 'bernie@davis.net', NULL, NULL, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(13, 'Carter Kunde', 'kallie_mclaughlin@bednar.name', NULL, NULL, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(14, 'Kaycee Maggio', 'clair@anderson.net', NULL, NULL, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(15, 'Mr. Darron Dooley', 'bertha_stroman@leannon.info', NULL, NULL, '2012-03-01 12:59:52', '2012-03-01 12:59:52'),
+(16, 'Luz Yundt', 'aditya.hettinger@fisher.biz', NULL, NULL, '2012-03-01 12:59:52', '2012-03-01 12:59:52');
 
 -- --------------------------------------------------------
 
@@ -5116,6 +5154,12 @@ INSERT INTO `Usuarios` (`id`, `usuario`, `nombre`, `sexo`, `nivel`, `email`, `te
 --
 
 --
+-- Indexes for table `empleados`
+--
+ALTER TABLE `empleados`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `Estados`
 --
 ALTER TABLE `Estados`
@@ -5144,6 +5188,12 @@ ALTER TABLE `Usuarios`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `empleados`
+--
+ALTER TABLE `empleados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `Estados`
