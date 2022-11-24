@@ -4,29 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventajas y desventajas de AJAX</title>
+
+        <!-- Importando el CDN "Content Delivery Network" de bootstrap 4 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+	<!-- cdn jquery for bootstrap framework-->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+	<!-- css3 for bootstrap  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+	<!-- cdn bundle bootstrap include Popper  -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+	<!-- cdn favicon -->
+	<link rel="shortcut icon" href="https://icons.iconarchive.com/icons/graphics-vibe/developer/64/ajax-icon.png" type="image/x-icon"> 
+
+    <!-- Importando el css3 -->
+    <link rel="stylesheet" href="./css/01.template.css" type="text/css">
+
+    <title>AJAX: Ventajas y Desventajas</title>
 </head>
 <body>
     <div class="container">
-        <h1>Ventajas y desventajas de AJAX</h1>
+        <h1>
+            AJAX: Asynchronous Javascript And XML
+            <small>Ventajas y Desventajas</small>
+        </h1>
+
+        <hr>
+
+        <p>AJAX, al igual de que todas las tecnologías presenta ventajas y desventajas para su uso, las cuales se describen a continuación</p>
+
+        <h3>Ventajas:</h3>
+
+        <ul class="ventajas">
+
+            <li>Utiliza tecnologias ya existentes.</li>
+            <li>Soportado por la mayoria de los navegadores modernos.</li>
+            <li><span>Interactividad:</span> El usuario no tiene que esperar a que lleguen los datos del servidor</li>
+            <li><span>Portabilidad:</span> No requiere de plugins</li>
+            <li><span>Velocidad:</span> Debido a que no debe recargar todo el sitio completo, si no unicamente se realiza la actualización de los datos solicitados al servidor.</li>
+        </ul>
+
+        <h3>Desventajas:</h3>
+
+        <ul class="desventajas">
+            <li>Se pierde el concepto de volver a la página anterior</li>
+            <li>Si se guarda en favoritos no necesariamente se guarda en la posición actual</li>
+            <li>La existencia de sitios con ajax y otros sin esta, favorce el desorientarse</li>
+            <li>Problemas de compatibilidad con navegadores antiguos</li>
+            <li>No funciona si el usuario ha desactivado javascript en el navegador</li>
+            <li>Se requiere conocimiento en todas las tecnologias utilizadas por AJAX</li>
+            <li>Tiempos de carga lentos dependiendo de la carga del servidor</li>
+        </ul>
     </div>
-
-    <ol class="ventajas">
-        <li>Utiliza tecnologias ya existentes</li>
-        <li>Soportado por la mayoria de los navegadores modernos</li>
-        <li>Interactividad. El usuario no tiene que esperar a que lleguen los datos del servidor</li>
-        <li>Portabilidad. No requiere de plugins</li>
-        <li>Mayor velocidad. Debido a que no debe recargar todo el sitio completo</li>
-    </ol>
-
-    <ol class="desventajas">
-        <li>Se pierde el concepto de volver a la página anterior</li>
-        <li>Si se guarda en favoritos no necesariamente se guarda en la posición actual</li>
-        <li>La existencia de sitios con ajax y otros sin esta, favorce el desorientarse</li>
-        <li>Problemas de compatibilidad con navegadores antiguos</li>
-        <li>No funciona si el usuario ha desactivado javascript en el navegador</li>
-        <li>Se requiere conocimiento en todas las tecnologias utilizadas por AJAX</li>
-        <li>Tiempos de carga lentos dependiendo de lacarga del servidor</li>
-    </ol>
 </body>
 </html>
