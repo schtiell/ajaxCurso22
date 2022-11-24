@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
+
+.container{
+    display: block;
+    text-align: center;
+    background-color: #FAFAFA;
+    color: #212F3D;
+    font-size: 16px;
+    padding: 20px 30px;
+}
+
+.ejercicio{
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 80%;
+}
+
+.ejercicio p{
+    text-align: justify;
+}
+
+h1,
+h2{
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+small{
+    display: block;
+    color: #8C9193;
+}
+
+hr{
+    margin: 40px;
+}
+
+
+p{
+    margin: 20px;
+    text-align: justify;
+}
+
+span{
+    font-weight: bold;
+}
+
+pre{
+    display: block;
+    margin: 1em 3em;
+    font-family: 'Roboto Mono', monospace;
+    text-align: left;
+    white-space: pre-line;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+ul{
+	list-style-image: url("../ico/js2.png");
+    margin: 40px 30px;
+}
+
+ul li{
+	text-align: justify;
+    text-indent: 10px;
+    margin-bottom: 15px;
+}
+
+ol{
+    margin: 40px 30px;
+}
+
+ol > li{
+    text-align: justify;
+    margin-bottom: 10px;
+}
