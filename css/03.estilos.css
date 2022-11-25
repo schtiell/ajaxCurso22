@@ -1,11 +1,11 @@
 #menu{
-    font-family:'Courier New', Courier, monospace;
     margin: 5px;
 }
 
 #menu p{
     margin: 0;
     padding: 0;
+    font-family:'Courier New', Courier, monospace;
 }
 
 #menu a{
@@ -32,7 +32,6 @@
     background: #FFC;
     text-align: left;
     font-family: 'Courier New', Courier, monospace;
-    border-width: 0;
     padding: 5px;
     border: 1px solid #FA0;
     margin: 20px;

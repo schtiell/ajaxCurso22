@@ -6,8 +6,8 @@ function inicializarEventos (){
 
     for (let i = 1; i <= 12; i++) {
 
-        let objeto = document.getElementById(`enlace${i}`);
-        objeto.addEventListener("click", presionEnlace, false);
+        let enlace = document.getElementById(`enlace${i}`);
+        enlace.addEventListener("click", presionEnlace, false);
     }
 }
 
