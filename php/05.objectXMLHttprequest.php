@@ -6,8 +6,8 @@
     $file = fopen("../php/puntaje.txt", "a")or die ("1. No se pudo abrir el archivo");
 
     //Se agregan los valores enviados mediante la url, el nombre y el voto
-    fputs($file, "<p>"."<strong>Nombre: </strong>".$_REQUEST['nombre']."</p>");
-    fputs($file, "<p>"."<strong>Voto: </strong>".$_REQUEST['puntaje']."</p>");
+    fputs($file, "<p>"."<span>Nombre: </span>".$_REQUEST['nombre']."</p>");
+    fputs($file, "<p>"."<span>Voto: </span>".$_REQUEST['puntaje']."</p>");
     
     //Se cierra el archivo
     fclose($file);
@@ -27,5 +27,4 @@
 
     //Se cierra el arhivo
     fclose($file);
-
 ?>
