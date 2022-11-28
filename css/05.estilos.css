@@ -13,6 +13,12 @@
     border-radius: 15px;
 }
 
+.col-form-label{
+    display: block;
+    margin: 10px auto;
+    font-weight: bold;
+}
+
 .resultados{
     display: none;
 
