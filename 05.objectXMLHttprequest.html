@@ -47,6 +47,30 @@
             var objeto = new XMLHttpRequest();
         </pre>
 
+        <p>Las propiedades principales del objeto XMLHttpRequest son:</p>
+
+        <ul>
+            <li><span>onreadystatechange:</span> Almacena la función o el nombre de la función que se ejecutará cuando el objeto XMLHttpRequest cambie de estado.</li>
+            <li>
+                <span>readyState:</span> Almacena el estado del requerimiento hecho al servidor, pudiendo ser:
+                <ul>
+                    <li><span>0:</span> No inicializado <span>El método open no ha sido llamado.</span></li>
+                    <li><span>1:</span> Cargando, <span>Se llamó al método open</span></li>
+                    <li><span>2:</span> Cargado, <span>Se llamó al metodo send y ya se cuenta con la cebecera HTTP y el status</span></li>
+                    <li><span>3:</span> Interactivo, <span>La propiedad responseText tiene datos parciales</span></li>
+                    <li><span>4:</span> Completado, <span>La propiedad responseText tiene todos los datos solicitados al servidor</span></li>
+                </ul>
+            </li>
+            <li><span>responseText:</span> Almacena el string devuelto por el servidor, luego de haber hecho una petición</li>
+            <li><span>responseXML:</span> Similar a responseText, con la diferencia de que el string devuelto por el servidor se encuentra en formato XML</li>
+        </ul>
+
+        <p>Los métodos principales del objeto XMLHttpRequest son:</p>
+        <ul>
+            <li><span>open: </span>Abre un requerimiento HTTP al servidor</li>
+            <li><span>send: </span>Envía el requerimiento al servidor</li>
+        </ul>
+
         <div class="container ejercicio">
 
             <h2>
