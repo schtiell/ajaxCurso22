@@ -1,70 +1,50 @@
-.container{
-    background: #FAFAFA;
-    color: #212F3D;
-    text-align: center;
-    font-size: 16px;
-    padding: 20px 30px;
-
-}
-
-small{
-    display: block;
-}
-
-hr{
-    margin: 40px;
-}
-
-h1{
-    margin: 30px auto;
-    text-align: center;
-    font-weight: bold;
-}
-
-p{
-    margin: 20px;
-    text-align: justify;
-}
-
-span{
-    font-weight:bold;
-    font-style:oblique;
-
-}
-
 .image{
     display: block;
+    background-image: url(https://images-na.ssl-images-amazon.com/images/I/41KfAWjStkL._AC_SR400,600_.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: 300px;
+    height: 450px;
+
     margin: 35px auto;
-    width: 250px;
-    height: 250px;
-    background: url(http://www.scratchya.com.ar/problemas/ajaxya2/resu/foto1.jpg);
-    border: 1.5px solid #000;
+
     border-radius: 15px;
+}
+
+h3{
+    font: lighter 20px 'Roboto Mono';
+    text-align: center;
 }
 
 
 /*Estilos para el ejemplo*/
-
-.enlaces{
-    display: flex;
-    justify-content: center;
-}
 .voto{
-    padding: 0;
-}
-
-.voto a{
-    float: left;
-    width: 30px;
-    text-decoration: none;
-    text-align: center;
-    color: #f00;
-    background: #f7f8e8;
-    border: 1px solid #a4f53e;
-    font-size: 20px;
-    margin: 1px;
+    padding: 0
 }
 
 .voto li{
     display: inline;
+
+    margin: 20px 0;
+}
+
+.voto a{
+    float: center;
+
+    padding: 5px 6px;
+    
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    
+    color: #fff;
+    background-color: #3BA1D8;
+    
+    border: 1px solid #A6ADB1;
+    border-radius: 7px;
+}
+
+#resultados{
+    clear: left;
 }

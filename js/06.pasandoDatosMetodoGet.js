@@ -1,47 +1,76 @@
-addEventListener('load',inicializarEventos,false);
 
-function inicializarEventos()
-{
-  var ref=document.getElementById('formulario');
-  ref.addEventListener('submit',enviarDatos,false);
+let inicializarEvento = function () {
+
+	let votos = document.querySelector('#voto');
+    let items =  votos.querySelectorAll('li');
+	let anclas = votos.querySelectorAll('a');
+
+	for (let i = 0; i < anclas.length; i++) {
+    
+    items[i].addEventListener('mouseover', entrar, false);
+    items[i].addEventListener('mouseout', salir, false);
+    anclas[i].addEventListener('click', votar, false);
+	}
 }
 
-function enviarDatos(e)
-{
-  e.preventDefault();
-  enviarFormulario();
+let entrar = function (e){
+
+    let referencia = e.target;
+
+    let votos = document.querySelector('#voto');
+    let items = votos.querySelectorAll('li');
+
+    for (let i = 0; i < referencia.firstChild.nodeValue; i++) {
+    
+        items[i].firstChild.style.background = "#046DA5";
+        items[i].firstChild.style.color = '#fff';
+    }
+}
+
+let salir = function (e){
+
+    let referencia = e.target;
+    let votos = document.querySelector('#voto');
+    let items = votos.querySelectorAll('li');
+
+    for (let i = 0; i < referencia.firstChild.nodeValue; i++) {
+    
+        items[i].firstChild.style.background = '#3BA1D8';
+        items[i].firstChild.style.color = '#fff';
+    }
+}
+
+let votar = function (e){
+
+    e.preventDefault();
+    let referencia = e.target;
+    cargarVoto(referencia.firstChild.nodeValue);
+}
+
+let cargarVoto = function (voto) {
+
+    let numerorandom = Math.floor(Math.random() * 100);
+
+    xhttpr = new XMLHttpRequest();
+    xhttpr.onreadystatechange = procesarEventos;
+    xhttpr.open('GET', `../php/06.pasandoDatosMetodoGet.php?voto=${voto}&numrandom=${numerorandom}`,true);
+    xhttpr.send();
 }
 
 
-function retornarDatos()
-{
-  var cad='';
-  var nom=document.getElementById('nombre').value;
-  var com=document.getElementById('comentarios').value;
-  cad='nombre='+encodeURIComponent(nom)+'&comentarios='+encodeURIComponent(com);
-  return cad;
+let procesarEventos = function (){
+
+	let imprespuesta = document.querySelector('#resultados');
+
+	if (xhttpr.readyState == 4 && xhttpr.status == 200) {
+		
+		imprespuesta.innerHTML = 'Voto registrado';
+
+	} else {
+		
+		imprespuesta.innerHTML = 'cargando...';
+	}
 }
 
-var conexion1;
-function enviarFormulario() 
-{
-  conexion1=new XMLHttpRequest();
-  conexion1.onreadystatechange = procesarEventos;
-  conexion1.open('POST','../php/07.pasandoDatosMetodoPost.php', true);
-  conexion1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  conexion1.send(retornarDatos());  
-}
-
-function procesarEventos()
-{
-  var resultados = document.getElementById("resultados");
-  if(conexion1.readyState == 4)
-  {
-    resultados.innerHTML = 'Gracias.';
-  } 
-  else 
-  {
-    resultados.innerHTML = 'Procesando...';
-  }
-}
-
+var xhttpr;
+addEventListener('load', inicializarEvento, false)

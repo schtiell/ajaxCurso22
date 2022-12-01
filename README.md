@@ -5,3 +5,4 @@
 3. Ejemplo signos zodiacales con ajax.
 4. Ejemplo signos zodiacales sin usar ajax.
 5. Ajax: XMLHttpRequest object.
+6. Ajax: Método GET.
