@@ -1,30 +1,19 @@
 
 //La funcion inicializarEventos hace referencia al elemento html con id formulario, e inicia el evento submit invocando a la funcion enviardatos
-let inicializarEventos = function () {
+let inicializarEventos = () => {
 
     let ref = document.querySelector("#formulario");
     ref.addEventListener("submit", enviarDatos, false);
 }
 
 //La funcion enviarDatos previene el comportamiento del evento submit e invoca a la funcion enviarFormulario
-let enviarDatos = function (e) {
+let enviarDatos = e => {
     e.preventDefault();
     enviarFormulario();
 }
 
-//La funcion retornar datos, define una cadena vacia y llama a los valores ingresados en el campo nombre y comentearios y los asigna a una variable. Posterior a esto construye la url con los valores de nombre y comentarios y retorna la misma
-let retornarDatos = function () {
-    let cadena = '';
-    let nombre = document.querySelector("#nombre").value;
-    let comentarios = document.querySelector("#comentarios").value;
-
-    //el metodo encodeURIComponent() codifica los caracteres especiales de los valores ingresados por el usuario
-    cadena = `nombre=${encodeURIComponent(nombre)}&comentarios=${encodeURIComponent(comentarios)}`;
-    return cadena;
-}
-
 //La funcion enviarFormulario inicia el objeto XMLHttpRequest y llama a la funcion procesarEventos, mediante el metodo post envia los datos al servidor(archivo php).
-let enviarFormulario = function () {
+let enviarFormulario = () => {
 
     conexion = new XMLHttpRequest();
     conexion.onreadystatechange = procesarEventos;
@@ -34,18 +23,31 @@ let enviarFormulario = function () {
     value = El valor que se establecerá como el cuerpo del encabezado. */
     conexion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     conexion.send(retornarDatos());
+}
 
+//La funcion retornar datos, define una cadena vacia y llama a los valores ingresados en el campo nombre y comentearios y los asigna a una variable. Posterior a esto construye la url con los valores de nombre y comentarios y retorna la misma
+let retornarDatos = () => {
+    let cadena = '';
+    let nombre = document.querySelector("#nombre").value;
+    let comentarios = document.querySelector("#comentarios").value;
+
+    //el metodo encodeURIComponent() codifica los caracteres especiales de los valores ingresados por el usuario
+    cadena = `nombre=${encodeURIComponent(nombre)}&comentarios=${encodeURIComponent(comentarios)}`;
+    return cadena;
 }
 
 //La función procesarEventos es ejecutada cada ves que cambia el estado del objeto XMLHttpRequest, cuando retorna un estado = 4 significa que los datos se han enviado correctamente.
 let procesarEventos = function () {
 
     let resultados = document.querySelector('#resultados');
+
     console.log(conexion.readyState);
 
-    if(conexion.readyState == 4) {
+    if(conexion.readyState == 4 && conexion.status == 200) {
+
         resultados.innerHTML = 'Gracias...';
     }else{
+        
         resultados.innerHTML = 'Procesando...';
     }
 }
