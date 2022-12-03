@@ -1,73 +1,39 @@
-/*Estilos definidos para la plantilla*/
-
-.container{
-    background: #FAFAFA;
-    color: #212F3D;
-    text-align: center;
-    font-size: 16px;
-    padding: 20px 30px;
+.col-sm-4,
+.col-sm-8{
+    display: flex;
+    justify-content: center;
 }
-
-small{
-    display: block;
-}
-
-hr{
-    margin: 40px;
-}
-
-h1{
-    margin: 30px auto;
-    text-align: center;
-    font-weight: bold;
-}
-
-h2{
-    margin: 20px auto;
-    text-align: center;
-    font-weight: bold;
-}
-
-p{
-    margin: 20px;
-    text-align: justify;
-}
-
-li{
-    margin: 20px;
-    text-align: justify;
-}
-
-span{
-    font-weight:bold;
-    font-style:oblique;
-    margin: auto;
-}
-
-/* Estilos para el ejemplo */
 
 a{
     display: block;
+    margin: 10px auto;
     text-align: left;
-    margin: 10px;
+    font: 16px 'Roboto Mono';
 }
 
-.recuadro{
-    background: #ffffcc;
+a:hover{
+    text-decoration: none;
+    color: #E6791E;
+}
+
+.comentarios{
+    display: none;
+    
+    width: 90%;
+    
+    margin: 10px auto;
+    padding: 10px 20px;
+
+    border: 1px solid #E6791E;
+    border-radius: 15px;
+
+    background-color: #F5CAA6;
+
+    font: 17px Monospace;
+    text-align: justify;
+}
+
+h3{
+    font-size: 20px;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-width: 0;
-    padding: 15px;
-    border: 1px solid #ffaa00;
-    margin: 40px;
-    width: 70%;
-}
-
-.recuadro p{
-    text-align: center;
-}
-
-.contenedor{
-    display: flex;
-    justify-content: center;
 }

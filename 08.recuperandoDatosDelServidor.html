@@ -4,39 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cdn jquery for bootstrap framework-->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-    <!-- Importando la libreria jQuery -->
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <!-- Importando el CDN "Content Delivery Network" de bootstrap 4 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <!-- Importando el CDN de bootstrap 4 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
-    <!-- Importando los estilos css -->
+	<!-- css3 for bootstrap  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+	<!-- cdn bundle bootstrap include Popper  -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+	<!-- cdn favicon -->
+	<link rel="shortcut icon" href="https://icons.iconarchive.com/icons/graphics-vibe/developer/64/ajax-icon.png" type="image/x-icon"> 
+
+    <!-- Importando estilos css -->
+    <link rel="stylesheet" href="./css/01.template.css" type="text/css">
     <link rel="stylesheet" href="./css/08.estilos.css" type="text/css">
 
     <title>Recuperando datos mediante la propiedad responseText del objeto XMLHttpRequest</title>
 </head>
 <body>
     <div class="container">
-        <h1>Recuperando datos mediante la propiedad <small>responseText del objeto XMLHttpRequest</small></h1>
 
-        <p>Ahora nos concentraremos en la propiedad responseText del objeto XMLHttpRequest. Esta propiedad almacena el valor devuelto por el servidor.</p>
-
-        <p>Normalmente accederemos a la propiedad responseText cuando el objeto XMLHttpRequest nos informa que toda la información fue remitida por el servidor, esto ocurre cuando la propiedad readyState del objeto XMLHttpRequest almacena el valor 4.</p>
-
-        <p>Confeccionaremos un ejemplo para identifiar donde utilizar la propiedad responseText. El problema consiste en mostrar una lista de hipervínculos que representan los comentarios de distintas fecha. El objetivo es rescatar todos los comentarios para la fecha seleccionada por el visitante y su posterior visualización sin tener que recargar nuevamente la página.</p>
+        <h1>
+            AJAX: Asynchronous Javascript And XML
+            <small>Propiedad: responseText</small>
+        </h1>
 
         <hr>
 
-        <h2>Selecciona la fecha</h2>
+        <p><span>La propiedad responseText</span> del objeto XMLHttpRequest. Esta propiedad almacena el valor devuelto por el servidor.</p>
 
-        <div id="fecha">
-            <a href="./php/08.recuperandoDatosDelServidor.php?fecha=21/01/16">Ver comentarios del 21/Enero/16</a>
-            <a href="./php/08.recuperandoDatosDelServidor.php?fecha=22/01/16">Ver comentarios del 22/Enero/16</a>
-            <a href="./php/08.recuperandoDatosDelServidor.php?fecha=23/01/16">Ver comentarios del 23/Enero/16</a>
-        </div>
-        <div class="contenedor">
-            <div class="recuadro" id="comentarios">Comentarios:</div>
+        <p>Normalmente se accede a la propiedad responseText cuando el objeto XMLHttpRequest informa que toda la información fue remitida por el servidor, esto ocurre cuando la <span>propiedad readyState del objeto XMLHttpRequest almacena el valor 4.</span></p>
+
+        <p>Confeccionaremos un ejemplo para identifiar donde utilizar la propiedad responseText. El problema consiste en mostrar una lista de hipervínculos que representan los comentarios de distintas fecha. El objetivo es rescatar todos los comentarios para la fecha seleccionada por el visitante y su posterior visualización sin tener que recargar nuevamente la página.</p>
+
+        <div class="container ejericicio">
+
+            <h2>Selecciona la fecha</h2>
+
+            <hr>
+    
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="fecha">
+                        <a href="./php/08.recuperandoDatosDelServidor.php?fecha=21/01/16">Comentarios del 21/Enero/16</a>
+                        <a href="./php/08.recuperandoDatosDelServidor.php?fecha=22/01/16">Comentarios del 22/Enero/16</a>
+                        <a href="./php/08.recuperandoDatosDelServidor.php?fecha=23/01/16">Comentarios del 23/Enero/16</a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="comentarios" id="comentarios">Comentarios:</div>
+                </div>
+            </div>
         </div>
     </div>
 

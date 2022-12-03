@@ -3,29 +3,30 @@
 
     if ($_REQUEST["fecha"] == "21/01/16") {
 
-        echo "<p><strong> Estos son los comentarios del 21/Enero/2016 </strong></p>";
+        echo    "<h3>
+                    Comentarios recibidos;
+                    <small>21/Enero/2016</small>
+                </h3>";
 
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
+        echo "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia!";
 
-    }else if ($_REQUEST["fecha"] == "22/01/16") {
+    } else if ($_REQUEST["fecha"] == "22/01/16") {
 
-        echo "<p><strong> Estos son los comentarios del 22/Enero/2016 </strong></p>";
+        echo    "<h3>
+                    Comentarios recibidos;
+                    <small>22/Enero/2016</small>
+                </h3>";
 
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
+        echo    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia!";
 
-    }else if ($_REQUEST["fecha"] == "23/01/16") {
 
-        echo "<p><strong> Estos son los comentarios del 23/Enero/2016</strong></p>";
+    } else if ($_REQUEST["fecha"] == "23/01/16") {
 
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
-        echo "xxxxxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxx \n";
+        echo    "<h3>
+                    Comentarios recibidos;
+                    <small>23/Enero/2016</small>
+                </h3>";
+
+        echo "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia!";
     }
 ?>

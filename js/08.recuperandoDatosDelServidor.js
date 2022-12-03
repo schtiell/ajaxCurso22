@@ -1,20 +1,24 @@
 
 
-let inicializarEventos = function (){
+let inicializarEventos = () => {
 
-    let referencia;
-    referencia = document.querySelector("#fecha");
-    let array = referencia.querySelectorAll("a");
+    let comentarios = document.querySelector("#fecha");
+    let anclas = comentarios.querySelectorAll("a");
 
-    for (let i = 0; i < array.length; i++) {
-        array[i].addEventListener("click", presionEnlace, false);
+    for (let i = 0; i < anclas.length; i++) {
+
+        anclas[i].addEventListener("click", presionEnlace, false);
     }
 }
 
-let presionEnlace = function (e){
+let presionEnlace = e => {
 
     e.preventDefault();
-    let url = e.target.getAttribute("href");
+
+    let enlace = e.target;
+
+    let url = enlace.getAttribute("href");
+
     verComentarios(url);
 
 }
@@ -23,6 +27,7 @@ let verComentarios = function (url) {
 
     if (url == ''){
         return;
+
     }else{
         conexion = new XMLHttpRequest();
         conexion.onreadystatechange = procesarEventos;
@@ -33,11 +38,15 @@ let verComentarios = function (url) {
 
 let procesarEventos = function () {
 
-    let detalles = document.querySelector("#comentarios");
+    let printArea = document.querySelector("#comentarios");
 
-    if(conexion.readyState == 4){
-        detalles.innerHTML = conexion.responseText;
+    if(conexion.readyState == 4 && conexion.status == 200){
+
+        printArea.style.display = "block";
+        printArea.innerHTML = conexion.responseText;
+
     }else{
+
         detalles.innerHTML = 'Cargando...';
     }
 }
