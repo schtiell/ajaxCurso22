@@ -1,20 +1,20 @@
 <?php
 
-    if ($_REQUEST['pa'] == 'Argentina'){
+    if ($_REQUEST['pais'] == 'Argentina'){
 
         $superficie=2700000;
         $capital="Buenos Aires";
         $idioma="Castellano";
         $poblacion=38000000;
 
-    } else if ($_REQUEST['pa'] == 'Brasil'){
+    } else if ($_REQUEST['pais'] == 'Brasil'){
 
         $superficie=8500000;
         $capital="Brasilia";
         $idioma="Portugues";
         $poblacion=163000000;
 
-    } else if ($_REQUEST['pa'] == 'Chile'){
+    } else if ($_REQUEST['pais'] == 'Chile'){
 
         $superficie=750000;
         $capital="Santiago";

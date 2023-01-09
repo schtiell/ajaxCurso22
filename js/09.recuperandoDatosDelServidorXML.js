@@ -1,6 +1,3 @@
-//console.log("Recuperando los datos del servidor con XML");
-
-
 /** 
  *  EJERCICIO PROPUESTO PARA MODIFICAR EL EJEMPLO
  * 
@@ -30,12 +27,11 @@ let cambiarOptionSelect =  function(e){
 
 **/
 
-let inicializarEventos = function (){
-
+var conexion;
+addEventListener("load", () => {
     let obj = document.querySelector("#boton1");
     obj.addEventListener("click", presionBoton, false);
-}
-
+}, false)
 
 let presionBoton = function (e){
 
@@ -58,25 +54,22 @@ let presionBoton = function (e){
     
 }
 
-
 let recuperarDatos = function (pais){
 
     conexion = new XMLHttpRequest();
     conexion.onreadystatechange = procesarEventos;
-    conexion.open('GET', `./php/09.recuperandoDatosDelServidorXML.php?pa=${pais}`, true)
+    conexion.open('GET', `./php/09.recuperandoDatosDelServidorXML.php?pais=${pais}`, true)
     conexion.send();
 }
-
 
 let procesarEventos = function (){
 
     let resultados = document.querySelector("#resultados");
 
-    //console.log(conexion.readyState);
-
-    if(conexion.readyState == 4){
+    if(conexion.readyState == 4 && conexion.status == 200){
 
         let xml = conexion.responseXML;
+        let headline = document.querySelector('.headline');
 
             let capital = xml.getElementsByTagName("capital");
             let superficie = xml.getElementsByTagName("superficie");
@@ -88,7 +81,7 @@ let procesarEventos = function (){
                                     Idioma: ${idioma[0].firstChild.nodeValue}<br>
                                     Población: ${poblacion[0].firstChild.nodeValue}<br>`;
         
-            
+            headline.style.display = "block";
             resultados.style.display = "block";
 
     }else{
@@ -96,7 +89,3 @@ let procesarEventos = function (){
         resultados.innerHTML = 'Cargando...';
     }
 }
-
-var conexion;
-addEventListener("load",inicializarEventos,false);
-//addEventListener("load",iniciarEventosEjercicio,false);
