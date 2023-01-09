@@ -8,7 +8,7 @@
                     <small>21/Enero/2016</small>
                 </h3>";
 
-        echo "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia!";
+        echo "<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia! </p>";
 
     } else if ($_REQUEST["fecha"] == "22/01/16") {
 
@@ -17,7 +17,7 @@
                     <small>22/Enero/2016</small>
                 </h3>";
 
-        echo    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia!";
+        echo    "<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia! </p>";
 
 
     } else if ($_REQUEST["fecha"] == "23/01/16") {
@@ -27,6 +27,6 @@
                     <small>23/Enero/2016</small>
                 </h3>";
 
-        echo "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia!";
+        echo "<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi veritatis aut neque distinctio rerum dolore culpa dolor pariatur soluta delectus vero non nobis fugiat nemo quas laudantium, sequi eveniet officia! </p>";
     }
 ?>

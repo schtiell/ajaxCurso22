@@ -1,6 +1,7 @@
 
 
-let inicializarEventos = () => {
+var conexion;
+addEventListener("load", () => {
 
     let comentarios = document.querySelector("#fecha");
     let anclas = comentarios.querySelectorAll("a");
@@ -9,7 +10,7 @@ let inicializarEventos = () => {
 
         anclas[i].addEventListener("click", presionEnlace, false);
     }
-}
+}, false);
 
 let presionEnlace = e => {
 
@@ -23,7 +24,7 @@ let presionEnlace = e => {
 
 }
 
-let verComentarios = function (url) {
+let verComentarios = url => {
 
     if (url == ''){
         return;
@@ -50,6 +51,3 @@ let procesarEventos = function () {
         detalles.innerHTML = 'Cargando...';
     }
 }
-
-var conexion;
-addEventListener("load", inicializarEventos, false);
