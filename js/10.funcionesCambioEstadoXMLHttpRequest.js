@@ -1,5 +1,3 @@
-//console.log("Funciones cambio de status XMLHttpRequest");
-
 
 //La función inicializar eventos, hace referencia al elemento html con id formulario e inicia el evento submit mediante la función anonima que recibe el evento como parametro, evita el comportamiento por default que es ir al sitio que procesara la información del boton sunmit e instancia a la función enviarFormulario
 let inicializarEventos = function (){
@@ -27,6 +25,7 @@ let enviarFormulario = function () {
 
     //Muestra en un aler el estatus de la propiedad readyState. En este punto es 0
     alert(`El valor de la propiedad readyState: ${conexion.readyState}`);
+    console.log(`${conexion.readyState}: UNSET`)
 
     //Abre la petición mediante el metodo get, enviando el valor de la variable num mediante al url al archivo php
     conexion.open('GET', `./php/10.funcionesCambioEstadoXMLHttpRequest.php?numero=${num}`, true);
@@ -43,7 +42,7 @@ let procesarEventos = function () {
     
     let resultados = document.querySelector('#resultados');
     
-    if (conexion.readyState == 4) {
+    if (conexion.readyState == 4 && conexion.status == 200) {
         
         console.log(conexion.responseText);
         resultados.innerHTML = conexion.responseText;
