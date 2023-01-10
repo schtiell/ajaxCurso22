@@ -6,6 +6,10 @@
 4. Ejemplo signos zodiacales sin usar ajax.
 5. Ajax: XMLHttpRequest object.
 6. Ajax: Método GET.
-7. Ajax: pasando datos al servidor con el método POST
-8. Ajax: recuperando datos del servidor. Propiedad responseText
-9. Ajax: recuperando datos del servidor. Propiedad responseXML
+7. Ajax: pasando datos al servidor con el método POST.
+8. Ajax: recuperando datos del servidor. Propiedad responseText.
+9. Ajax: recuperando datos del servidor. Propiedad responseXML.
+10. Ajax: Propiedades onreadystate y readystate del objeto XMLHttpRequest.
+11.
+12. Ajax: Propiedades status y statusText del objeto XMLHttpRequest.
+13. Ajax: Metodo abort() del objeto XMLHttpRequest.

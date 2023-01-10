@@ -43,14 +43,14 @@ let finDeEspera = function (){
 }
 
 
-//La función procesarEventos si el estado de la conexión es 4 devuelto por la propiedad onreadystatechage es 4 y la propiesdad status es 200 entonces escribe en el DOM el texto devuelto por el servidor
+//La función procesarEventos si el estado de la conexión es 4 devuelto por la propiedad onreadystatechage es 4 y la propiedad status es 200 entonces escribe en el DOM el texto devuelto por el servidor
 let procesarEventos = function(){
 
     let detalles = document.querySelector('#detalles');
 
-    if(conexion.readyState == 4){
+    if(conexion.readyState == 4 && conexion.status == 200){
 
-        if (conexion.status == 200) {
+        if (conexion.statusText == 'OK') {
 
             clearTimeout(tiempo);
             detalles.innerHTML = conexion.responseText;

@@ -1,56 +1,8 @@
-/*Estilos definidos para la plantilla*/
-
-.container{
-    background: #FAFAFA;
-    color: #212F3D;
-    text-align: center;
-    font-size: 16px;
-    padding: 20px 30px;
-}
-
-small{
-    display: block;
-    color: #8C9193;
-}
-
-hr{
-    margin: 40px;
-}
-
-h1{
-    margin: 30px auto;
-    text-align: center;
-    font-weight: bold;
-}
-
-h2{
-    margin: 20px auto;
-    text-align: center;
-    font-weight: bold;
-}
-
-p{
-    margin: 20px;
-    text-align: justify;
-}
-
-li{
-    margin: 20px;
-    text-align: justify;
-    list-style: disc;
-}
-
-span{
-    font-weight:bold;
-    font-style:oblique;
-    text-align: left;
-}
-
-/*Estilos para el ejercicio*/
 
 #menu{
-    font-family: Arial, Helvetica, sans-serif;
     margin: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #menu p{
@@ -60,11 +12,15 @@ span{
 
 #menu a{
     display: block;
+
     padding: 3px;
     width: 160px;
-    background: #f7f8e8;
+
+    background-color: #f7f8e8;
     border-bottom: 1px solid #eee;
+
     text-align: center;
+
     box-shadow: 10px 8px 31px -9px rgba(186,113,46,0.75);
     -webkit-box-shadow: 10px 8px 31px -9px rgba(186,113,46,0.75);
     -moz-box-shadow: 10px 8px 31px -9px rgba(186,113,46,0.75);
@@ -82,15 +38,16 @@ a:visited{
 }
 
 #detalles{
-    background: #ffc;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-width: 0;
-    padding: 5px;
-    border: 1px solid #fa0;
     margin: 20px 5px;
-    border-radius: 5px;
+    padding: 5px;
 
-    /*Sombreado*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    background-color: #ffc;
+    border: 1px solid #fa0;
+    border-radius: 5px;
+    border-width: 0;
+
     box-shadow: 10px 8px 31px -9px rgba(186,113,46,0.75);
     -webkit-box-shadow: 10px 8px 31px -9px rgba(186,113,46,0.75);
     -moz-box-shadow: 10px 8px 31px -9px rgba(186,113,46,0.75);
