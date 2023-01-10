@@ -5,48 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Importando la libreria de jQuery -->
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <!-- cdn jquery for bootstrap framework-->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-    <!-- Importando bootstrap 4 -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Importando el CDN "Content Delivery Network" de bootstrap 4 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+	<!-- css3 for bootstrap  -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+	<!-- cdn bundle bootstrap include Popper  -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+	<!-- cdn favicon -->
+	<link rel="shortcut icon" href="https://icons.iconarchive.com/icons/graphics-vibe/developer/64/ajax-icon.png" type="image/x-icon"> 
+
+    <!-- Importando estilos css -->
+    <link rel="stylesheet" href="./css/01.template.css" type="text/css">
     <link rel="stylesheet" href="./css/12.estilos.css" type="text/css">
-    <title>Document</title>
+    <title>AJAX: Propiedad status & statusText</title>
 </head>
 <body>
     <div class="container">
-        <h1>Objeto XMLHttpRequest: <small>Propiedades status & statusText</small></h1>
-
-        <p>Las propiedades status y statusText son utilizadas para lo siguiente: </p>
-
-        <ul>
-            <li><span>status: </span>Esta propiedad almacena el código del estado de la petición HTTP. Entre otros valores que puede retornar el servidor: 200 es el valor para una conexión exitosa, 404 página inexistente. Esta propiedad de solo lectura esta disponible cuando readyState toma los valores 3 o 4.</li>
-
-            <li><span>statusText: </span>Almacena el texto de la petición HTTP enviado por el servidor.</li>
-        </ul>
-
-        <p>El uso de esta nueva propiedad es lo más adecuado cuando readyState contiene el valor 4 ya que además se debe verificar si la propiedad status almacena el valor 200, es decir el servidor procesó correctamente la petición</p>
-
-        <p><span>Ejercicio: </span>Para probar estas propiedades se realizará el problema del concepto anterior (retornar del servidor el cuadrado de un número que ingresamos por teclado), introduciremos un error (el método open llamará a una página php inexistente) y veremos cual es el mensaje en pantalla, luego agregaremos la verificación de la propiedad status.</p>
+        <h1>
+            AJAX: Asynchronous Javascript And XML 
+            <small>Propiedades: status & statusText</small>
+        </h1>
 
         <hr>
 
-        <div class="formulario">
+        <p>Las propiedades de solo lectura <span>status y statusText</span> del objeto XMLHttpRequest son utilizadas para lo siguiente: </p>
 
-            <h2>Ejercicio: <small>Calcular el cuadrado de un número</small></h2>
+        <ul>
+            <li><span>XMLHttpRequest.status: </span>Esta propiedad almacena el código del estado de la petición HTTP. Entre otros valores que puede retornar el servidor: 200 es el valor para una conexión exitosa, 404 página inexistente. Esta propiedad de solo lectura esta disponible cuando readyState toma los valores 3 o 4.</li>
 
-            <form action="./php/12.propiedad_status_statusText.php" method="post" id="formulario">
-                <label for="">Ingresar un numero</label>
-                <input type="text" name="numero" id="numero" size="10" class="form-control">
-                <input type="submit" value="Calcular" id="enviar" class="btn btn-primary">
-            </form>
+            <li><span>XMLHttpRequest.statusText: </span>Almacena el texto de la petición HTTP enviado por el servidor, es decir devuelve una cadena que contiene el mensaje de estado de la respuesta tal como lo devuelve el servidor HTTP. A diferencia con la propiedad <span>status</span> que indica un código de estado numérico, esta propiedad contiene el texto del estado de la respuesta, como "OK" o "Not found". Si la solicitud <span>readyState</span> está en estado UNSET o OPENED el valor de la cadena será vacia. </li>
+        </ul>
 
-            <div id="resultados">
+        <p>El uso de esta propiedad es lo más adecuado cuando readyState contiene el valor 4 ya que además se debe verificar si la propiedad status almacena el valor 200, es decir el servidor procesó correctamente la petición</p>
+
+        <div class="container ejercicio">
+
+            <h2>Ejemplo:</h2>
+
+            <hr>
+
+            <p>Para probar estas propiedades se realizará el problema del concepto anterior (retornar del servidor el cuadrado de un número que ingresamos por teclado), se introducirá un error (el método open llamará a una página php inexistente) y veremos cual es el mensaje en pantalla, luego agregaremos la verificación de la propiedad status.</p>
+
+
+            <div class="formulario">
+
+                <h2>Ejercicio: <small>Calcular el cuadrado de un número</small></h2>
+
+                <hr>
+
+                <form action="./php/12.propiedad_status_statusText.php" method="post" id="formulario">
+
+                    <div class="form-group">
+                        <label for="numero">Ingresar un número:</label>
+                        <input type="text" name="numero" id="numero" class="form-control">
+                    </div>
+
+                    <button class="btn btn-primary" id="enviar ">Calcular</button>
+                </form>
+
+                <div id="resultados"></div>
             </div>
         </div>
-
-
     </div>
     <script src="./js/12.propiedad_status_statusText.js" type="text/javascript"></script>
 </body>

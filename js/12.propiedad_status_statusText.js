@@ -19,8 +19,7 @@ let enviarFormulario = function (){
 
     conexion = new XMLHttpRequest();
     conexion.onreadystatechange = procesarEventos;
-    conexion.open("GET",`../php/12.propiedad_status_statusTextt.php?numero=${numero}`,true);
-    //conexion.open("GET", `../php/12.propiedad_status_statusText.php?numero=${numero}`, true);
+    conexion.open("GET",`../php/12.propiedad_status_statusText.php?numero=${numero}`,true);
     conexion.send();
 }
 
@@ -30,9 +29,9 @@ let procesarEventos = function () {
 
     let resultados = document.querySelector("#resultados");
 
-    if(conexion.readyState == 4){
+    if(conexion.readyState == 4 && conexion.status == 200){
 
-        if (conexion.status == 200) {
+        if (conexion.statusText == "OK") {
 
             resultados.innerHTML = conexion.responseText;
             resultados.style.display = "block";
