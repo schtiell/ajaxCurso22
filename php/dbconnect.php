@@ -17,7 +17,8 @@
                 $this->conexion = new PDO("mysql:host=$this->host; dbname=$this->dbname", $this->username, $this->password);
                 $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $this->conexion->exec("SET CHARACTER SET utf8");
-                return $this->conexion;
+                //return $this->conexion;
+                $this->__construct();
 
             } catch (Exception $e) {
 

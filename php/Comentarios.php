@@ -9,7 +9,7 @@
         //Metodo constructor de la clase Comentaarios
         public function Comentarios(){
 
-            //Instanciando al metodo constructor de la clase COnexion
+            //Instanciando al metodo constructor de la clase Conexion
             parent::__construct();
         }
 
@@ -29,6 +29,5 @@
                 echo "Error al realizar la consulta" . $e->getMessage();
             }
         }
-
     }
 ?>
