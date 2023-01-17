@@ -13,5 +13,5 @@
 11.
 12. Ajax: Propiedades status y statusText del objeto XMLHttpRequest.
 13. Ajax: Metodo abort() del objeto XMLHttpRequest.
-14.
+14. Ajax: Mostrar un gif animado mientras se resive la respuesta http del servidor web
 15. Ajax: Cargando comentarios pagínados almacenados en una base de datos mysql.

@@ -36,9 +36,9 @@ let procesarEventos = function () {
 
     let resultados = document.querySelector('#resultados');
 
-    if (conexion.readyState == 4 ) {
+    if (conexion.readyState == 4 && conexion.status == 200 ) {
 
-        if (conexion.status == 200) {
+        if (conexion.statusText == 'OK') {
 
             resultados.innerHTML = 'Gracias...';
         } else {
