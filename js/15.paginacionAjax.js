@@ -1,8 +1,7 @@
 //Es funcion carga el backend de php, llamando a la funcion cargarpagina y mandando como argumento la  ruta relativa del script de php
-let inicializarEventos = function (){
+var conexion;
+addEventListener("load", () => cargarPagina('../php/15.paginacionAjax.php'), false);
 
-    cargarPagina('../php/15.paginacionAjax.php');
-}
 
 //La funcion presionEnlace recibe el evento como parametro. Evita el comportamiento por default del elemento html y obtiene su atributo href por ultimo enviar la url obtenida a la función cargarPagina()
 let presionEnlace = function (e) {
@@ -36,30 +35,28 @@ let procesarEventos = function () {
     let detalles = document.querySelector('#detalles');
 
     //Cuando el estado de la propiedad readyState se igual a 4 (completado) entonces se escribe en el div con id detalles la respueta del server.
-    if (conexion.readyState == 4) {
+    if (conexion.readyState == 4 && conexion.status == 200) {
 
-        detalles.innerHTML = conexion.responseText;
+        if(conexion.statusText == "OK"){
 
-        //Este elemento devuelto por el servidor php es almacenado en una variable
-        let objeto1 = document.querySelector('.sig');
+            detalles.innerHTML = conexion.responseText;
 
-        if (objeto1 != null ) {
-            objeto1.addEventListener('click', presionEnlace, false);
+            //Este elemento devuelto por el servidor php es almacenado en una variable
+            let objeto1 = document.querySelector('.sig');
+
+            if (objeto1 != null ) {
+                objeto1.addEventListener('click', presionEnlace, false);
+            }
+
+            let objeto2 = document.querySelector('.ant');
+
+            if (objeto2 != null ) {
+                objeto2.addEventListener('click', presionEnlace, false);
+            }
         }
 
-        let objeto2 = document.querySelector('.ant');
-
-        if (objeto2 != null ) {
-            objeto2.addEventListener('click', presionEnlace, false);
-        }
     } else {
 
         detalles.innerHTML = '<img src="../img/loading.gif">';
     }
 }
-
-//Variable de conexion global
-var conexion;
-
-//LLamando el avento load del DOM para iniciar con la funcion inicializar la funcion inicializarEventos, con la propagación de los evento en false;
-addEventListener('load', inicializarEventos, false);

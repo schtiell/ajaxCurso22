@@ -27,8 +27,8 @@
 
     if ($contadorRegistros >= 1){
 
-        //3 Segundos de espera para simular la tardanza de respuesta del servidor al front-end
-        sleep(3);
+        //2 Segundos de espera para simular la tardanza de respuesta del servidor al front-end
+        sleep(2);
 
         //Variable para el conteo de comentarios impresos
         $impresos = 0;
@@ -38,7 +38,7 @@
             echo    "Nombre: "      . $comentario['nombre']     . "<br>"    .
                     "Fecha: "       . $comentario['fecha']      . "<br>"    .
                     "Comentario: "  . $comentario['comentarios']."<br>"     .
-                    "===================================================="  .
+                    "====================="  .
                     "<br>";
             $impresos+=1;
         }

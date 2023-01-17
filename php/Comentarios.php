@@ -26,7 +26,7 @@
                 $this -> conexion = null;
             } catch (Exception $e) {
 
-                echo "Error al realizar la consulta" . $e->getMessage();
+                echo "Error al consultar los comentarios" . $e->getMessage();
             }
         }
     }

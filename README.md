@@ -13,3 +13,5 @@
 11.
 12. Ajax: Propiedades status y statusText del objeto XMLHttpRequest.
 13. Ajax: Metodo abort() del objeto XMLHttpRequest.
+14.
+15. Ajax: Cargando comentarios pagínados almacenados en una base de datos mysql.
