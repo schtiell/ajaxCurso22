@@ -15,3 +15,4 @@
 13. Ajax: Metodo abort() del objeto XMLHttpRequest.
 14. Ajax: Mostrar un gif animado mientras se resive la respuesta http del servidor web
 15. Ajax: Cargando comentarios pagínados almacenados en una base de datos mysql.
+16. Ajax: Controles select dinámicos a partir de un arreglo.

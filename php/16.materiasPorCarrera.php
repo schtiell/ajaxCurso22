@@ -7,6 +7,7 @@
 
     //Analizando el codigo de la url recibido para generar el array con las materias por cada carrera
     switch ($carrera) {
+        
         case 1:
             $materias = ['Programación 1', 'Análisis Matemático', 'Estructura de las organizaciones', 'Etica profesional'];
             break;
