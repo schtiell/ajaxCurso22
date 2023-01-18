@@ -1,9 +1,12 @@
-//La funcion inicializarEventos invoca al elemento html con id estados y queda a la espera del evento change para iniciar la funcion mostrarMunicipios
-let inicializarEventos = function (){
 
+
+
+var conexion;
+
+addEventListener("load", () => {
     let estado = document.querySelector('#estados');
     estado.addEventListener("change", mostrarMunicipios, false);
-}
+}, false)
 
 //La funcion invar nuevamente el elemento html con id estados para optener su valor.
 let mostrarMunicipios = function (){
@@ -34,14 +37,12 @@ let mostrarMunicipios = function (){
 
 let procesarEventos = function(){
 
-    if (conexion.readyState == 4) {
+    if (conexion.readyState == 4 && conexion.status == 200) {
 
         let esperando = document.querySelector('#espera');
         esperando.style.display = "None";
 
-        if  (conexion.status == 200) {
-
-            // console.log(`Conection status: ${conexion.status}`);
+        if  (conexion.statusText == 'OK') {
 
             let municipios = document.querySelector("#municipios");
 
@@ -63,6 +64,3 @@ let procesarEventos = function(){
     }
 }
 
-//Variable de conexion globar para ajax y definicion de la espera del evento load para cargar la funcion inicializarEventos
-var conexion;
-addEventListener("load", inicializarEventos, false)

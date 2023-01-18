@@ -20,4 +20,6 @@
             echo "<option value=\"$id\">$municipio</option>";
         }
     }
+
+    sleep(2);
 ?>
