@@ -1,5 +1,3 @@
-console.log("Autocompletando el textbox");
-
 //Funcion inicilizarEventos
 let inicializarEventos = function () {
     //Code..
@@ -24,9 +22,9 @@ let procesarEventos = function () {
 
     let respuesta = document.querySelector('#resultados');
 
-    if (conexion.readyState == 4){
+    if (conexion.readyState == 4 && conexion.status == 200){
 
-        if (conexion.status == 200) {
+        if (conexion.statusText == 'OK') {
             
             let xml = conexion.responseXML;
             let palabras = xml.querySelectorAll('palabra');
@@ -35,6 +33,7 @@ let procesarEventos = function () {
 
             for (let i = 0; i < palabras.length; i++) {
                 //
+                respuesta.style.visibility="visible";
                 respuesta.innerHTML = respuesta.innerHTML + palabras[i].firstChild.nodeValue +'<br>';
                 
             }

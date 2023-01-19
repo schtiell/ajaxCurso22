@@ -15,7 +15,7 @@ function inicializarEventos() {
   let tooltip = document.createElement('div');
   tooltip.setAttribute('id','divmensaje');
 
-  array = document.querySelectorAll('body');
+  array = document.querySelectorAll('.ejercicio');
   array[0].appendChild(tooltip);
 
 }

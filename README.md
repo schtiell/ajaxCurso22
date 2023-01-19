@@ -18,3 +18,4 @@
 16. Ajax: Controles select dinámicos a partir de un arreglo.
 16. Ajax: Controles select dinámicos creados a partir de una base de datos mysql.
 17. Ajax: Mostrando un tooltip ejecutando eventos del mouse sobre elementos html.
+18. Ajax: Mostrando sujerencias al comenzar a escribir sobre un textxbox.

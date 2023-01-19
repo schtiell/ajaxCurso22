@@ -1,54 +1,28 @@
-/*Estilos para plantilla*/
 
-.container{
-    display: block;
-    text-align: center;
-    background-color: #FAFAFA;
-    color: #212F3D;
-    font-size: 16px;
-    padding: 20px 30px;
+#resultados {
+
+    visibility: hidden;
+
+    margin: 40px auto;
+    padding: 5px 10px;
+
+    position:absolute;
+    background:#BBE5F3 ;
+
+    border: 1px solid #22C2F7;
+    border-radius: 10px;
 }
 
-small{
-    display: block;
-    color: #8C9193;
-}
-
-hr{
-    margin: 40px;
-}
-
-h1{
-    margin: 30px auto;
-    text-align: center;
-    font-weight: bold;
-}
-
-p{
-    margin: 20px;
-    text-align: justify;
-}
-
-h2{
-    margin: 20px auto;
-    text-align: center;
-    font-weight: bold;
+label,
+input{
+    margin: 40px auto;
 }
 
 label{
-    display: block;
-    margin-bottom: 10px;
+    font-weight: bolder;
+    text-align: right;
 }
 
-.btn{
-    display: block;
-    margin: 20px auto;
-    width: 150px;
+input[id="palabra"]{
+    width: 70%;
 }
-
-/* Estilos propios del ejercicio: */
-
-#resultados {
-    position:absolute;
-    background:#ff0;
-  }
