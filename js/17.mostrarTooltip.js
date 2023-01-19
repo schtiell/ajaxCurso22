@@ -23,7 +23,7 @@ function inicializarEventos() {
 //Funcion para mostras el tooltip al pasar el mouse sobre el elemento
 function mostrarToolTip(e){
 
-  let tooltip = document.getElementById("divmensaje");
+  let tooltip = document.querySelector("#divmensaje");
   tooltip.style.visibility = "visible";
   tooltip.style.left = (e.clientX + document.body.scrollLeft + 15)+'px';
   tooltip.style.top = (e.clientY + document.body.scrollTop + 15)+'px';
@@ -36,7 +36,7 @@ function mostrarToolTip(e){
 //Funcion para actualizar la posicion del tooltip deacuerdo al moviento del mouse
 function actualizarToolTip(e) {
 
-  let tooltip = document.getElementById("divmensaje");
+  let tooltip = document.querySelector("#divmensaje");
   tooltip.style.left = (e.clientX + document.body.scrollLeft + 15)+'px';
   tooltip.style.top = (e.clientY + document.body.scrollTop + 15)+'px';
 }
@@ -44,7 +44,7 @@ function actualizarToolTip(e) {
 //Función para ocultar el tooltip al quitar el mouse del elemento html
 function ocultarToolTip(e){
 
-  let tooltip = document.getElementById("divmensaje");
+  let tooltip = document.querySelector("#divmensaje");
   tooltip.style.visibility = "hidden";
 }
 
@@ -60,10 +60,10 @@ function recuperarServidorTooltip(codigo){
 //Función para procesar los 
 function procesarEventos() {
 
-  let tooltip = document.getElementById("divmensaje");
+  let tooltip = document.querySelector("#divmensaje");
   tooltip.style.visibility = "visible";
 
-  if(conexion.readyState == 4) {
+  if(conexion.readyState == 4 && conexion.status == 200) {
 
     tooltip.innerHTML=conexion.responseText;
 
