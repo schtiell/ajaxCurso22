@@ -1,16 +1,13 @@
-console.log("Manejo de información mediante objetos JSON");
-
-
-
-let inicializarEventos = function() {
+addEventListener('load', () => {
 
     let boton = document.querySelector("#solicitarInfo");
     boton.addEventListener('click', presionarBoton, false);
-}
+    }
+, false);
 
 let presionarBoton = function (e) {
 
-    let cadena=`{
+    let cadena =`{
                     "microprocesador":"pentium",
                     "memoria":1024,
                     "discos": [80, 250]
@@ -27,5 +24,3 @@ let imprimirDatos = function (pc) {
 
     console.log(`Microprocesador: ${pc.microprocesador}\nMemoria: ${pc.memoria} Mb\nDiscos: ${pc.discos[0]}, ${pc.discos[1]} Mb`);
 }
-
-addEventListener("load", inicializarEventos, false);
