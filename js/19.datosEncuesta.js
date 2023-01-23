@@ -1,11 +1,11 @@
+var conexion;
 
-//
-let inicializarEventos = function (){
+addEventListener ("load", () => {
 
     let formulario = document.querySelector("#formulario");
-
     formulario.addEventListener("submit", enviarDatos, false);
-}
+    
+}, false);
 
 let enviarDatos = function (e) {
 
@@ -46,7 +46,6 @@ let procesarEventos = function (){
     }
 }
 
-var conexion;
-addEventListener ("load", inicializarEventos, false);
+
 
 

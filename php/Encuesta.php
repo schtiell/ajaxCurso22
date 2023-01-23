@@ -14,7 +14,7 @@
 
             try {
                 //code...
-                $consulta = "SELECT * FROM Encuesta";
+                $consulta = "SELECT * FROM Encuenta";
                 $query = $this -> conexion -> prepare($consulta);
                 $query -> execute();
                 return $query;
@@ -31,7 +31,7 @@
         public function actualizarDatosEncuesta($columna, $valorActual, $voto){
             try {
                 //code...
-                $actualizacion = "UPDATE Encuesta SET $columna = :valor + :voto WHERE codigo = 1";
+                $actualizacion = "UPDATE Encuenta SET $columna = :valor + :voto WHERE codigo = 1";
                 $query = $this -> conexion-> prepare($actualizacion);
                 //$query -> bindValue(':columna', $columna, PDO::PARAM_STR);
                 $query -> bindValue(':valor', $valorActual, PDO::PARAM_INT);
