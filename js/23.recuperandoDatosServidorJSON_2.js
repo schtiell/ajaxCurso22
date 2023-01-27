@@ -29,9 +29,9 @@ let recuperarDatos = function (id) {
 //Funcion que procesa la respuesta del servidor si el estado de conexion es 4 y el estatus del sitio devuelto es 200
 let procesarEventos = function () {
 
-    if (conexion.readyState == 4) {
+    if (conexion.readyState == 4 && conexion.status == 200) {
 
-        if(conexion.status == 200) {
+        if(conexion.statusText == 'OK') {
 
             //Analiza la cadena de texto devuelta como JSON y la convierte a javascript
             let datos = JSON.parse(conexion.responseText);
@@ -43,7 +43,7 @@ let procesarEventos = function () {
 
         } else {
 
-            console.error("Status != 200");
+            console.error(conexion.status);
             resultados.innerHTML = "<img src='../img/loader2.gif' />";
         }
     } else {
@@ -56,15 +56,15 @@ let procesarEventos = function () {
 let crearSalida = function (obj) {
 
     //Creacion de tabla que será impresa por la función procesarEventos
-    return  `<table class="table table-striped table-hover">
+    return  `<table id="table" class="table table-striped table-hover">
                 <thead class="thead-dark">
                     <tr>
-                        <td>#</td>
-                        <td>Nombre</td>
-                        <td>Usuario</td>
-                        <td>Email</td>
-                        <td>Telefono</td>
-                        <td>Compañia</td>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                        <th>Compañia</th>
 
                     </tr>
                 </thead>
