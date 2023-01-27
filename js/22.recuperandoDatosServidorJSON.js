@@ -1,6 +1,5 @@
 //Inici los evento al hacer clic en el boton
 let inicializarEventos = function (){
-    console.info("Recuperando datos del servidor JSON");
     let boton = document.querySelector("#botonEnviar");
     boton.addEventListener('click', presionarBoton, false);
 }
