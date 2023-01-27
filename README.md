@@ -22,3 +22,4 @@
 19. Ajax: Generando un grafico mediante una encuenta presentada al usuario.
 20. Ajax: Utilizando JSON para retornar datos al cliente mediante peticiones http.
 21. Ajax: Utilizando JSON para retornar datos al cliente mediante peticiones http.
+22. Ajax: Recuperando datos del servidor utilizando.
