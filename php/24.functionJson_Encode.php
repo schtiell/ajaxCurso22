@@ -4,13 +4,14 @@
 
     header('Content-Type: text/txt; charset=utf8');
 
-    $user = new Empleado();
+    $empleado = new Empleado();
 
-    $array = $user->obtenerEmpleados();
+    $array = $empleado->obtenerEmpleados();
 
     while ($row = $array->fetch (PDO::FETCH_ASSOC)){
         $data[] = $row;
     }
+    
     $cadena = json_encode($data);
     echo $cadena;
 ?>

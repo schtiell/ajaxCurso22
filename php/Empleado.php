@@ -12,7 +12,7 @@
         public function obtenerEmpleados (){
 
             try {
-                $consulta = "SELECT * FROM Empleados";
+                $consulta = "SELECT * FROM empleados";
                 $query = $this -> conexion -> prepare($consulta);
                 $query -> execute();
                 return $query;

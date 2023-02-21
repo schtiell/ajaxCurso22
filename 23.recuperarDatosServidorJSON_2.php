@@ -24,7 +24,7 @@
 
     <!-- Importando estilos css -->
     <link rel="stylesheet" href="./css/01.template.css" type="text/css">
-    <link rel="stylesheet" href="./css/23.estilos.css" type="text/css">
+    <link rel="stylesheet" href="./css/24.estilos.css" type="text/css">
 
     <title>Recuperando datos del servidor en formato JSON</title>
 </head>

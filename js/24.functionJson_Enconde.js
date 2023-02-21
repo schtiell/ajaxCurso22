@@ -1,10 +1,8 @@
 
-//
 let iniciarEventos = function () {
 
-    console.log("Recuperando datos en formato json, utilizando la funcion jscon_encode de php");
-
     let boton = document.querySelector('#boton');
+
     boton.addEventListener('click', e => {
         conexion = new XMLHttpRequest();
         conexion.onreadystatechange = procesarEventos;
@@ -17,12 +15,12 @@ let procesarEventos = function () {
 
     let resultados = document.querySelector('#resultados');
 
-    if (conexion.readyState == 4) {
+    if (conexion.readyState == 4 && conexion.status == 200) {
 
-        if (conexion.status == 200) {
+        if (conexion.statusText == 'OK') {
 
             let datos = JSON.parse(conexion.responseText);
-            resultados.innerHTML = mostrarInformacion(datos);
+            resultados.innerHTML = generarTabla(datos);
 
         } else {
             console.log(`El status error es: ${conexion.status}`);
@@ -33,18 +31,18 @@ let procesarEventos = function () {
     }
 }
 
-let mostrarInformacion = function (obj) {
+let generarTabla = function (obj) {
 
     let cadena = `<table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <td>#</td>
-                            <td>Nombre</td>
-                            <td>Correo</td>
-                            <td>Password</td>
-                            <td>Rol_id</td>
-                            <td>Creado</td>
-                            <td>Actualizado</td>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Password</th>
+                            <th>Rol_id</th>
+                            <th>Creado</th>
+                            <th>Actualizado</th>
                         </tr>
                     </thead>
                     <tbody>`;

@@ -24,3 +24,4 @@
 21. Ajax: Utilizando JSON para retornar datos al cliente mediante peticiones http.
 22. Ajax: Recuperando datos del servidor en formato JSON, evento click.
 23. Ajax: Recuperando datos del servidor en formato JSON, evento change.
+24. Ajax: Recuperando datos del servidor en formato JSON, function json_encode().
