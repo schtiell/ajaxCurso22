@@ -12,10 +12,11 @@
         */
 
         //Atributos protegidos que solo pueden ser accedidos desde la case propia o de clases que hereden de esta.
-        protected $host = '127.0.0.1';
+        protected $host = 'localhost';
+        //protected $host = '127.0.0.1';
         protected $dbname = 'bdajax';
         protected $username = 'root';
         protected $password = 123456;
-        protected $port = 3306;
+        //protected $port = 3306;
     }
 ?>

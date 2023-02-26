@@ -42,9 +42,8 @@ let mostrarInformacion = function (obj) {
 
     let cadena = "";
     for (let i = 0; i < obj.length; i++) {
-        cadena = `${cadena} ${JSON.stringify(obj[i],undefined,2)}`;
+        cadena = `${JSON.stringify(obj[i],null,2)}`;
         console.log(JSON.stringify(obj[i],null,2));
-
     }
 
     return cadena;
