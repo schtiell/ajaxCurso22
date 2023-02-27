@@ -42,7 +42,7 @@ let mostrarInformacion = function (obj) {
 
     let cadena = "";
     for (let i = 0; i < obj.length; i++) {
-        cadena = `${JSON.stringify(obj[i],null,2)}`;
+        cadena = `${cadena} ${JSON.stringify(obj[i],null,2)}`;
         console.log(JSON.stringify(obj[i],null,2));
     }
 
