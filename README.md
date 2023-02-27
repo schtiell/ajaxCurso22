@@ -26,3 +26,4 @@
 23. Ajax: Recuperando datos del servidor en formato JSON, evento change.
 24. Ajax: Recuperando datos del servidor en formato JSON, function json_encode().
 25. Ajax: Solicitando datos JSON del server y convirtiendolos a objeto literal de js con la funcion stringify().
+26. Ajax: Transformando la respuesta del server en objetos literales con la funcion parse().

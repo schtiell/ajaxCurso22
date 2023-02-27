@@ -18,9 +18,10 @@ let procesarEventos = function () {
     let resultados = document.querySelector('#resultados');
     let cadena ='';
 
-    if (conexion.readyState == 4) {
+    if (conexion.readyState == 4 && conexion.status == 200) {
 
-        if (conexion.status == 200) {
+        if (conexion.statusText == 'OK') {
+            console.log (`El estatusText es: ${conexion.statusText}`);
 
             let datos = JSON.parse(conexion.responseText);
 
