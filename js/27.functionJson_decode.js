@@ -6,7 +6,7 @@ let iniciarEventos = function (){
     boton.addEventListener('click', e => {
 
         //Objeto a enviar al servidor php
-        let objeto_ejemplo = {
+        let usuario = {
             nombre: 'joaquin',
             apellido: 'sayago',
             edad: 36,
@@ -16,7 +16,7 @@ let iniciarEventos = function (){
         };
 
         //Convirtiendo el objeto js a objeto json
-        let cadena = JSON.stringify(objeto_ejemplo);
+        let cadena = JSON.stringify(usuario);
         enviarDatos(cadena);
 
     }, false);
@@ -35,9 +35,9 @@ let procesarEventos = function (){
 
     let resultados = document.querySelector('#resultados');
 
-    if (conexion.readyState == 4) {
+    if (conexion.readyState == 4 && conexion.status == 200) {
         
-        if (conexion.status == 200) {
+        if (conexion.statusText == 'OK') {
         
             resultados.innerHTML = conexion.responseText;
 
